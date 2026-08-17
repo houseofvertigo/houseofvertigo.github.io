@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ปอนด์… มีเรื่องจะถาม 🌀</title>
-<meta name="description" content="คำเชิญ 1 ใบ ไปดู VERTIGO ที่ House Samyan พฤหัสบดี 20 สิงหาคม 19:05">
+<title>มีเรื่องจะถามแป๊บนึง 🌀</title>
+<meta name="description" content="คำเชิญ 1 ใบ ไปดู VERTIGO ที่ House Samyan พฤหัสบดี 20 สิงหาคม รอบ 19:05">
 <meta name="theme-color" content="#0b0708">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ปอนด์… มีเรื่องจะถาม 🌀">
+<meta property="og:title" content="มีเรื่องจะถามแป๊บนึง 🌀">
 <meta property="og:description" content="VERTIGO (1958) · House Samyan · พฤหัสบดี 20 ส.ค. · 19:05 — กดเข้ามาดูหน่อย">
 <meta property="og:image" content="https://houseofvertigo.github.io/og.png">
 <meta property="og:url" content="https://houseofvertigo.github.io/">
@@ -61,14 +61,8 @@
 
   /* ---------- hero ---------- */
   .kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--dim)}
-  h1{
-    font-family:'Archivo Black',system-ui,sans-serif;font-weight:900;
-    font-size:clamp(3.4rem,20vw,6rem);line-height:.92;margin:.12em 0 .1em;
-    letter-spacing:-.02em;
-    background:linear-gradient(100deg,var(--cream),var(--amber) 55%,var(--red));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .typed{min-height:3.4em;font-size:1.05rem;color:var(--cream)}
+  .hello{font-size:1.15rem;font-weight:600;margin:10px 0 0;color:var(--cream)}
+  .typed{min-height:2.3em;font-size:1.15rem;font-weight:600;color:var(--cream);margin-top:2px}
   .typed .caret{display:inline-block;width:.55ch;background:var(--red);animation:blink 1s steps(1) infinite;color:transparent}
   @keyframes blink{50%{opacity:0}}
   .fineprint{font-size:.82rem;color:var(--dim);margin-top:2px}
@@ -262,14 +256,14 @@
 </svg>
 <div class="veil" aria-hidden="true"></div>
 
-<div class="marquee" aria-hidden="true"><span id="ticker">🚨 ประกาศด่วน · มีผู้ชาย 1 คนกำลังรอคำตอบอยู่ · รอบนี้จัดขึ้นเพียงครั้งเดียว · ไม่มีรอบชดเชย · ห้ามพลาด · 🚨 &nbsp;&nbsp;&nbsp;</span></div>
+<div class="marquee" aria-hidden="true"><span id="ticker">🚨 ด่วน · มีคนรอคำตอบอยู่หนึ่งคน · รอบนี้รอบเดียว ไม่มีรอบชดเชย · เลื่อนลงไปดูก่อน 🚨 &nbsp;&nbsp;&nbsp;</span></div>
 
 <main class="wrap">
 
   <p class="kicker">คำเชิญ 1 ใบ · one (1) invitation</p>
-  <h1 id="hero-name">ปอนด์</h1>
+  <p class="hello"><span id="hero-name">เธอ</span>… มีเรื่องจะถามแป๊บนึง</p>
   <div class="typed" id="typed"></div>
-  <p class="fineprint">ใช้เวลา 30 วิ · ไม่มีขายของ · ไม่ต้องสมัครอะไรทั้งนั้น</p>
+  <p class="fineprint">อ่าน 30 วิก็จบ ไม่ได้จะขายอะไร สาบาน</p>
 
   <section class="card">
     <div class="label">Now showing</div>
@@ -281,10 +275,9 @@
       <div class="row"><i>⏰</i><b>รอบ 19:05</b></div>
     </div>
     <div class="badges">
-      <span class="badge gold">⭐ 9.9/10 — จากรีวิว 1 คน (เค้าเอง)</span>
-      <span class="badge hot">🔥 เหลือ 2 ที่นั่ง (เค้าจองไว้แล้ว)</span>
+      <span class="badge gold">🟠🟢🔵 Letterboxd 4.3/5</span>
       <span class="badge">🍿 ป๊อปคอร์นฟรี 100%</span>
-      <span class="badge">🚫 ไม่มีสปอยล์ (เค้ายังไม่เคยดูในโรง)</span>
+      <span class="badge">🚫 ไม่สปอยล์ เราก็ยังไม่เคยดูในโรง</span>
     </div>
   </section>
 
@@ -301,7 +294,7 @@
 
   <section class="ticket" id="ticket">
     <div class="adm">ADMIT TWO</div>
-    <div class="who" id="ticket-who">ปอนด์ + เค้า</div>
+    <div class="who" id="ticket-who">เธอ + เรา</div>
     <div class="meta">HOUSE SAMYAN · THU 20 AUG · 19:05 · SEAT: ข้างกัน</div>
     <div class="status" id="ticket-status">status: pending…</div>
   </section>
@@ -310,62 +303,62 @@
     <div class="label">ระดับความอยากไปของเธอ</div>
     <div class="slider-val" id="want-val">100%</div>
     <input type="range" id="want" min="0" max="100" value="100" aria-label="ระดับความอยากไป">
-    <p class="slider-say" id="want-say">ลากเล่นได้เลย ระบบ calibrate มาให้แล้ว 🌀</p>
+    <p class="slider-say" id="want-say">ลากเล่นได้ ระบบตั้งค่ามาให้แล้ว 🌀</p>
   </section>
 
   <div class="memes">
-    <p class="meme">หนังเรื่องนี้เกี่ยวกับผู้ชายคนนึงที่ตามผู้หญิงคนนึงไปทุกที่ — <em>เค้าไม่ได้จะสื่ออะไรน้า</em> ก็แค่หนังมันดีจริง</p>
-    <p class="meme">ปี 2012 นักวิจารณ์ทั่วโลกโหวตให้เรื่องนี้เป็น <em>หนังที่ดีที่สุดตลอดกาล</em> ของ Sight &amp; Sound ไปเสิร์ชดูได้ ไม่ได้มั่ว</p>
-    <p class="meme">128 นาที = <em>7,680 วินาที</em> ที่เธอต้องนั่งข้างเค้า ในความมืด เงียบๆ … ฟังดูน่ากลัวแต่มันคือโรงหนังปกติ</p>
+    <p class="meme">หนังมันเกี่ยวกับผู้ชายที่ตามผู้หญิงคนนึงไปทุกที่ — <em>ไม่ได้จะสื่ออะไรนะ</em> หนังมันดีจริงๆ</p>
+    <p class="meme">ปี 2012 นักวิจารณ์ทั่วโลกโหวตให้เรื่องนี้เป็น <em>หนังที่ดีที่สุดตลอดกาล</em> ในโพลของ Sight &amp; Sound ไม่ได้อวยเอง ไปเสิร์ชดูได้</p>
+    <p class="meme">หนังยาว 128 นาที แปลว่าต้องนั่งเงียบๆ ข้างกันในที่มืดสองชั่วโมง <em>พูดแบบนี้ดูน่ากลัว</em> แต่มันก็คือโรงหนังปกตินี่แหละ</p>
   </div>
 
   <div class="label">รีวิวจากผู้ใช้จริง (verified 🤝)</div>
   <div class="reviews">
     <div class="review">
       <div class="stars">★★★★★</div>
-      <q>ไปเถอะ มันซ้อมพูดประโยคชวนมา 3 วันแล้ว หน้ากระจกอ่ะ เห็นกับตา</q>
-      <div class="by">— <b>เพื่อนสนิทเค้า</b> · ผู้ใช้ที่ไม่ประสงค์ออกนาม</div>
+      <q>ไปเถอะ มันซ้อมประโยคชวนหน้ากระจกมาสามวันแล้ว เห็นกับตา</q>
+      <div class="by">— <b>เพื่อนสนิทเรา</b> · ขอไม่ออกนาม</div>
     </div>
     <div class="review">
       <div class="stars">★★★★★</div>
       <q>ลูกแม่ทำกับข้าวไม่เป็นนะ แต่เลือกหนังเก่ง</q>
-      <div class="by">— <b>แม่เค้า</b> · reviewer ระดับ Top 1</div>
+      <div class="by">— <b>แม่เรา</b> · รีวิวเวอร์อันดับ 1 ของบ้าน</div>
     </div>
     <div class="review">
       <div class="stars">★★★★☆</div>
-      <q>หนังผมเกี่ยวกับการตกหลุมรักจนหัวหมุน ก็… เหมาะสมดีนะครับสถานการณ์นี้</q>
-      <div class="by">— <b>อัลเฟรด ฮิตช์ค็อก</b> · (ไม่ได้พูดจริง เค้าแต่งเอง)</div>
+      <q>หนังผมพูดเรื่องคนที่หลงใครสักคนจนหัวหมุน ก็เข้ากับสถานการณ์นี้อยู่นะครับ</q>
+      <div class="by">— <b>อัลเฟรด ฮิตช์ค็อก</b> · (ไม่ได้พูดจริง เราแต่งเอง)</div>
     </div>
   </div>
 
   <div class="faq">
     <div class="label">คำถามที่พบบ่อย</div>
     <details>
-      <summary>ต้องคุยเยอะไหม เค้าเขินอ่ะ</summary>
-      <p>ไม่ต้องเลย หนังยาว 128 นาทีที่ห้ามคุย ถือว่าเป็นการออกเดตที่ปลอดภัยที่สุดในโลก</p>
+      <summary>ต้องคุยเยอะไหม เขินอ่ะ</summary>
+      <p>ไม่ต้องเลย หนัง 128 นาทีที่ห้ามคุยกัน คือการออกไปเจอกันที่ปลอดภัยที่สุดแล้ว</p>
     </details>
     <details>
-      <summary>ถ้าหนังน่าเบื่อจะทำยังไง</summary>
-      <p>หนังไม่น่าเบื่อ แต่ถ้าเบื่อจริง เธอมีสิทธิ์ด่าเค้าได้เต็มที่ตอนกินข้าวหลังหนัง (ใช่ มีมื้อหลังหนังด้วย เค้าแอบใส่มาในแพ็กเกจ)</p>
+      <summary>ถ้าหนังน่าเบื่อล่ะ</summary>
+      <p>ถ้าเบื่อจริง ด่าเราได้เต็มที่ตอนไปกินข้าวกันต่อ — ใช่ มีมื้อหลังหนังด้วย แถมให้</p>
     </details>
     <details>
       <summary>นี่คือเดตใช่ไหม</summary>
-      <p>เค้าจะบอกว่า "ก็แล้วแต่เธอจะเรียก" แต่ความจริงคือ… <em>ใช่</em></p>
+      <p>เราคงตอบว่า "ก็แล้วแต่เธอจะเรียก" แต่จริงๆ คือ… <em>ใช่</em></p>
     </details>
     <details>
-      <summary>ถ้าวันนั้นติดธุระล่ะ</summary>
-      <p>บอกมาตรงๆ ได้เลย เค้าไม่งอน (งอน 3 นาที แล้วก็หาวันใหม่)</p>
+      <summary>ถ้าวันนั้นติดธุระ</summary>
+      <p>บอกมาตรงๆ ได้เลย ไม่งอน (งอนแป๊บนึง แล้วก็หาวันใหม่)</p>
     </details>
   </div>
 
   <label class="agree">
     <input type="checkbox" id="agree" checked>
-    <span>ฉันได้อ่านและยอมรับว่า <b>เค้าก็น่ารักอยู่นะ</b> และการติ๊กออกจะไม่มีผลใดๆ ทั้งสิ้น</span>
+    <span>อ่านแล้วและยอมรับว่า <b>คนที่ชวนก็น่ารักอยู่นะ</b> — ติ๊กออกได้ แต่ไม่มีผลอะไร</span>
   </label>
 
   <section class="ask">
     <h2>ไปด้วยกันไหม</h2>
-    <p>เลือกได้ 2 ทาง (จริงๆ นะ)</p>
+    <p>มีสองปุ่ม กดอันไหนก็ได้ (จริงๆ นะ)</p>
     <div class="arena" id="arena">
       <button class="btn-yes" id="yes">ไปสิ 🌀</button>
       <button class="btn-no" id="no">ไม่ไป</button>
@@ -375,8 +368,8 @@
   </section>
 
   <p class="foot">
-    <span class="live" id="live">มีคนกำลังดูหน้านี้ 1 คน (คือเธอ)</span><br>
-    เค้ากดรีเฟรชรอคำตอบไปแล้ว <b id="refresh-count">47</b> ครั้ง<br>
+    <span class="live" id="live">ตอนนี้มีคนดูหน้านี้อยู่ 1 คน (ก็เธอนั่นแหละ)</span><br>
+    เรากดรีเฟรชรอคำตอบไปแล้ว <b id="refresh-count">47</b> ครั้ง<br>
     เว็บนี้ไม่เก็บข้อมูลอะไรเลย ไม่มีเซิร์ฟเวอร์ ไม่มีใครแอบดู<br>
     made with 🌀 and mild anxiety
   </p>
@@ -386,12 +379,12 @@
 
 <div class="screen" id="yay">
   <div class="inner">
-    <div class="achv">🏆 achievement unlocked: ทำให้ผู้ชายคนนึงยิ้มทั้งวัน</div>
+    <div class="achv">🏆 achievement unlocked: ทำให้คนคนนึงยิ้มทั้งวัน</div>
     <h2 class="big">ตกลงงงง!</h2>
-    <p>เค้ากดรัวๆ อยู่ตรงนี้แล้ว 🎉🌀🍿</p>
+    <p>ดีใจจนไม่รู้จะพิมพ์อะไรแล้ว 🎉🌀🍿</p>
     <div class="recap"><span>เจอกัน</span>พฤหัสบดี 20 สิงหาคม · 19:05<br>House Samyan</div>
     <p class="shout">แคปหน้าจอนี้ ส่งมาทักด้วยนะ 📸</p>
-    <p>เว็บนี้ไม่มีระบบส่งข้อความจริงๆ ถ้าเธอไม่ทัก เค้าจะไม่มีทางรู้เลยว่าเธอกดตกลง แล้วเค้าจะนั่งเฝ้าโทรศัพท์ทั้งคืน</p>
+    <p>เว็บนี้ไม่มีระบบส่งข้อความจริงๆ ถ้าเธอไม่ทักมา เราจะไม่รู้เลยว่าเธอกดตกลง แล้วก็จะนั่งเฝ้าโทรศัพท์ทั้งคืน</p>
     <button class="undo" id="undo-yes">กดผิด? กดตรงนี้เพื่อย้อนกลับ</button>
   </div>
 </div>
@@ -399,16 +392,16 @@
 <div class="screen" id="nay">
   <div class="inner">
     <h2 class="big">ไม่เป็นไรน้า 🥲</h2>
-    <p>เค้าถามเพราะอยากชวนจริงๆ ไม่ได้จะกวน — ปุ่มมันหนีเพราะเค้าเขียนโค้ดให้มันหนีเอง ขอโทษที</p>
-    <p>ไว้โอกาสหน้าน้า Hitchcock ยังอยู่ตรงนั้นแหละ ไม่ไปไหน</p>
+    <p>ถามเพราะอยากชวนจริงๆ ไม่ได้จะกวน — ปุ่มมันหนีเพราะเราเขียนโค้ดให้มันหนีเอง ขอโทษที</p>
+    <p>ไว้โอกาสหน้านะ Hitchcock ก็ยังอยู่ตรงนั้นแหละ ไม่ไปไหน</p>
     <button class="ghost" id="undo-no">เอ๊ะ ขอเปลี่ยนใจ 🌀</button>
   </div>
 </div>
 
 <script>
 const CONFIG = {
-  her: 'ปอนด์',
-  me: 'เค้า',
+  her: 'เธอ',
+  me: 'เรา',
   venue: 'House Samyan',
   when: '2026-08-20T19:05:00+07:00',
   whenLabel: 'พฤหัสบดี 20 สิงหาคม · 19:05',
@@ -423,7 +416,7 @@ const param = new URLSearchParams(location.search).get('to');
 const her = (param || CONFIG.her).trim().slice(0, 24) || CONFIG.her;
 $('hero-name').textContent = her;
 $('ticket-who').textContent = her + ' + ' + CONFIG.me;
-document.title = her + '… มีเรื่องจะถาม 🌀';
+if (param) document.title = her + '… มีเรื่องจะถาม 🌀';
 
 /* ---------- เกลียวแบบ Saul Bass ---------- */
 function spiral(turns, spacing, phase){
@@ -440,7 +433,7 @@ $('sp1').setAttribute('d', spiral(7, 11, 0));
 $('sp2').setAttribute('d', spiral(6, 13.5, Math.PI));
 
 /* ---------- พิมพ์ทีละตัว ---------- */
-const lines = ['มีเรื่องจะถาม', 'อย่าเพิ่งปัดขึ้นนะ', 'เลื่อนลงมาก่อน 🌀'];
+const lines = ['ไม่ยาวหรอก สัญญา', 'เลื่อนลงมาหน่อยดิ 🌀'];
 const typed = $('typed');
 if (reduced){
   typed.textContent = lines.join(' · ');
@@ -463,7 +456,7 @@ function tickClock(){
   const gap = target - Date.now();
   if (gap <= 0){
     ['d','h','m','s'].forEach(k => $(k).textContent = '00');
-    $('clock-note').textContent = 'รอบนี้เริ่มไปแล้ว… เอาเป็นรอบหน้าไหม 🥲';
+    $('clock-note').textContent = 'รอบนี้ฉายไปแล้ว… เอาเป็นรอบหน้าไหม 🥲';
     return;
   }
   const sec = Math.floor(gap / 1000);
@@ -478,11 +471,11 @@ setInterval(tickClock, 1000);
 /* ---------- สไลเดอร์ที่ลากลงยังไงก็เด้งกลับ ---------- */
 const want = $('want'), wantVal = $('want-val'), wantSay = $('want-say');
 const says = [
-  'เอ๊ะ ลากลงทำไม 😭 ระบบขอ recalibrate ใหม่นะ',
-  'ค่าที่ได้ผิดปกติ กำลังซ่อม… เรียบร้อย กลับมา 100% แล้ว',
-  'sensor เสีย ขอโทษด้วย ปกติมันคือ 100% ตลอด',
-  'เธอลากได้ แต่ระบบไม่ยอมรับค่าต่ำกว่า 100 ขอโทษจริงๆ 🫠',
-  'ok ลากไปเถอะ เดี๋ยวมันก็เด้งกลับเอง (มันเด้งกลับแล้ว)',
+  'เอ๊ะ ลากลงทำไม 😭 ขอปรับค่าใหม่แป๊บ',
+  'ค่าเพี้ยนอ่ะ กำลังซ่อม… เรียบร้อย กลับมา 100% แล้ว',
+  'ตัวเซนเซอร์มันเสีย ปกติมันคือ 100% ตลอดนะ',
+  'ลากได้เลย แต่ระบบมันไม่รับค่าต่ำกว่า 100 ขอโทษจริงๆ 🫠',
+  'ลากไปเถอะ เดี๋ยวมันก็เด้งกลับเอง (เห็นไหม เด้งแล้ว)',
 ];
 let wantTries = 0, wantTimer;
 want.addEventListener('input', () => {
@@ -504,7 +497,7 @@ agree.addEventListener('click', e => {
     e.preventDefault();
     agree.checked = true;
     agree.closest('.agree').querySelector('span').innerHTML =
-      'ติ๊กออกไม่ได้จ้า <b>เค้าน่ารักตามข้อกำหนดและเงื่อนไข</b> ✅';
+      'ติ๊กออกก็ได้ แต่<b>มันจะเด้งกลับมาเอง</b> ✅';
   }
 });
 
@@ -516,10 +509,10 @@ setInterval(() => { rc.textContent = +rc.textContent + 1; }, 4200);
 const arena = $('arena'), no = $('no'), yes = $('yes'), taunt = $('taunt');
 const taunts = [
   'เอ๊ะ?',
-  'กดไม่โดนอ่ะดิ 😐',
-  'ระบบแจ้งว่า… ไม่ได้ค่ะ',
-  'ครั้งที่ 4 แล้วนะ ยอมเถอะ',
-  'ok fine… ครั้งหน้าให้กดจริงละ 🫠',
+  'อ้าว กดไม่โดนอ่ะดิ 😐',
+  'ปุ่มนี้มันขัดข้องน่ะ',
+  'ครั้งที่สี่แล้วนะ ยอมเถอะ',
+  'เอาจริงดิ… ก็ได้ ครั้งหน้าให้กดจริงละ 🫠',
 ];
 let dodged = 0;
 
@@ -543,7 +536,7 @@ function dodge(e){
   dodged++;
   taunt.textContent = taunts[dodged - 1];
   yes.style.fontSize = (1.22 + dodged * 0.09) + 'rem'; // ปุ่มไปสิโตขึ้นเรื่อยๆ
-  if (dodged >= CONFIG.dodges) no.textContent = 'ไม่ไป (เอาจริงดิ)';
+  if (dodged >= CONFIG.dodges) no.textContent = 'ไม่ไป (เอาจริงนะ)';
   return true;
 }
 
@@ -588,12 +581,12 @@ think.addEventListener('click', () => {
   if (think.disabled) return;
   think.disabled = true;
   let n = 3;
-  think.textContent = 'กำลังคิดให้… ' + n;
+  think.textContent = 'ขอคิดแทนแป๊บ… ' + n;
   const iv = setInterval(() => {
     n--;
-    if (n > 0){ think.textContent = 'กำลังคิดให้… ' + n; return; }
+    if (n > 0){ think.textContent = 'ขอคิดแทนแป๊บ… ' + n; return; }
     clearInterval(iv);
-    think.textContent = 'คิดเสร็จแล้ว คำตอบคือไป 🌀 (กดปุ่มเขียวได้เลย)';
+    think.textContent = 'คิดเสร็จแล้ว คำตอบคือไป กดปุ่มเขียวเลย 🌀';
     think.disabled = false;
     yes.animate(
       [{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],
