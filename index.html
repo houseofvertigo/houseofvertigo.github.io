@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ปอนด์… มีเรื่องจะถาม 🌀</title>
+<meta name="description" content="คำเชิญ 1 ใบ ไปดู VERTIGO ที่ House Samyan พฤหัสบดี 20 สิงหาคม 19:05">
+<meta name="theme-color" content="#0b0708">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ปอนด์… มีเรื่องจะถาม 🌀">
+<meta property="og:description" content="VERTIGO (1958) · House Samyan · พฤหัสบดี 20 ส.ค. · 19:05 — กดเข้ามาดูหน่อย">
+<meta property="og:image" content="https://houseofvertigo.github.io/og.png">
+<meta property="og:url" content="https://houseofvertigo.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0708;
+    --cream:#f4ead7;
+    --green:#0d8c72;
+    --red:#e0402c;
+    --amber:#f0a830;
+    --dim:rgba(244,234,215,.62);
+    --card:rgba(255,255,255,.045);
+    --line:rgba(244,234,215,.16);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Noto Sans Thai',system-ui,-apple-system,'Segoe UI',sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::after{ /* film grain */
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:3;opacity:.05;
+    background-image:radial-gradient(rgba(255,255,255,.9) .5px,transparent .5px);
+    background-size:3px 3px;
+  }
+
+  /* ---------- spiral backdrop ---------- */
+  #spiral{
+    position:fixed;top:50%;left:50%;width:170vmax;height:170vmax;
+    transform:translate(-50%,-50%);z-index:0;pointer-events:none;
+    opacity:.34;animation:turn 44s linear infinite;
+  }
+  .veil{ /* ทำให้ตัวหนังสืออ่านง่ายทับเกลียว */
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 30%,rgba(11,7,8,.42),rgba(11,7,8,.86) 72%);
+  }
+  #spiral .b{animation:turn 62s linear infinite reverse;transform-origin:50% 50%}
+  @keyframes turn{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  body.party #spiral{opacity:.7;animation:turn 11s linear infinite,rainbow 6s linear infinite}
+  @keyframes rainbow{to{filter:hue-rotate(360deg) saturate(1.6)}}
+
+  .wrap{position:relative;z-index:2;max-width:520px;margin:0 auto;padding:clamp(28px,7vw,56px) 20px 64px}
+
+  /* ---------- hero ---------- */
+  .kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--dim)}
+  h1{
+    font-family:'Archivo Black',system-ui,sans-serif;font-weight:900;
+    font-size:clamp(3.4rem,20vw,6rem);line-height:.92;margin:.12em 0 .1em;
+    letter-spacing:-.02em;
+    background:linear-gradient(100deg,var(--cream),var(--amber) 55%,var(--red));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .typed{min-height:3.4em;font-size:1.05rem;color:var(--cream)}
+  .typed .caret{display:inline-block;width:.55ch;background:var(--red);animation:blink 1s steps(1) infinite;color:transparent}
+  @keyframes blink{50%{opacity:0}}
+  .fineprint{font-size:.82rem;color:var(--dim);margin-top:2px}
+
+  /* ---------- generic card ---------- */
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:20px;margin:26px 0;backdrop-filter:blur(6px);
+  }
+  .label{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+
+  .film-title{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:2.1rem;letter-spacing:.02em;line-height:1;color:var(--cream)}
+  .film-sub{color:var(--dim);font-size:.86rem;margin-top:6px}
+  .rows{margin-top:16px;display:grid;gap:9px}
+  .row{display:flex;gap:11px;align-items:baseline;font-size:1rem}
+  .row b{font-weight:600}
+  .row i{font-style:normal;width:1.35em;text-align:center;flex:none}
+
+  /* ---------- countdown ---------- */
+  .clock{display:flex;gap:8px;justify-content:space-between;text-align:center}
+  .unit{flex:1;background:rgba(0,0,0,.32);border:1px solid var(--line);border-radius:13px;padding:11px 4px}
+  .unit b{display:block;font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(1.5rem,7vw,2rem);color:var(--amber);line-height:1.1;font-variant-numeric:tabular-nums}
+  .unit span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .clock-note{text-align:center;color:var(--dim);font-size:.82rem;margin-top:12px}
+
+  /* ---------- ticket ---------- */
+  .ticket{
+    position:relative;background:linear-gradient(135deg,#16100f,#241512);
+    border:1px dashed rgba(240,168,48,.5);border-radius:16px;padding:18px 20px;margin:26px 0;
+    overflow:hidden;
+  }
+  .ticket::before,.ticket::after{
+    content:'';position:absolute;width:22px;height:22px;background:var(--ink);border-radius:50%;
+    top:50%;transform:translateY(-50%);
+  }
+  .ticket::before{left:-11px}.ticket::after{right:-11px}
+  .ticket .adm{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1.15rem;color:var(--amber);letter-spacing:.06em}
+  .ticket .who{font-size:1.35rem;font-weight:800;margin:6px 0 2px}
+  .ticket .meta{font-size:.8rem;color:var(--dim);letter-spacing:.06em}
+  .ticket .status{
+    margin-top:12px;display:inline-block;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+    border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--dim);
+  }
+  .ticket.stamped .status{border-color:var(--green);color:#7ff0d0;background:rgba(13,140,114,.18)}
+
+  /* ---------- memes ---------- */
+  .memes{display:grid;gap:14px;margin:30px 0}
+  .meme{font-size:.95rem;color:var(--cream);padding-left:15px;border-left:2px solid var(--red);opacity:.92}
+  .meme em{font-style:normal;color:var(--amber)}
+
+  /* ---------- แถบประกาศด่วนแบบเว็บยุค 2000 ---------- */
+  .marquee{
+    position:relative;z-index:2;overflow:hidden;white-space:nowrap;
+    background:var(--red);color:#fff5ec;font-weight:800;font-size:.85rem;
+    padding:7px 0;border-bottom:2px solid rgba(0,0,0,.35);
+  }
+  .marquee span{display:inline-block;padding-left:100%;animation:slide 17s linear infinite}
+  @keyframes slide{to{transform:translateX(-100%)}}
+
+  /* ---------- ป้ายเรตติ้งกำมะลอ ---------- */
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .badge{
+    font-size:.74rem;font-weight:600;padding:5px 11px;border-radius:999px;
+    border:1px solid var(--line);color:var(--dim);background:rgba(0,0,0,.28);
+  }
+  .badge.hot{border-color:rgba(224,64,44,.6);color:#ff9c88}
+  .badge.gold{border-color:rgba(240,168,48,.55);color:var(--amber)}
+
+  /* ---------- สไลเดอร์ความอยากไป ---------- */
+  .slider-card input[type=range]{
+    -webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:99px;margin:14px 0 6px;
+    background:linear-gradient(90deg,var(--green),var(--amber),var(--red));outline:none;
+  }
+  .slider-card input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--cream);
+    border:3px solid var(--red);cursor:grab;box-shadow:0 4px 14px rgba(0,0,0,.5);
+  }
+  .slider-card input[type=range]::-moz-range-thumb{
+    width:26px;height:26px;border-radius:50%;background:var(--cream);border:3px solid var(--red);cursor:grab;
+  }
+  .slider-val{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:2rem;color:var(--amber);line-height:1}
+  .slider-say{color:var(--dim);font-size:.86rem;min-height:2.6em;margin-top:6px}
+
+  /* ---------- รีวิวปลอม ---------- */
+  .reviews{display:grid;gap:12px;margin:26px 0}
+  .review{
+    background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 16px;
+  }
+  .review .stars{color:var(--amber);font-size:.85rem;letter-spacing:.12em}
+  .review q{display:block;font-size:.95rem;margin:5px 0 7px;quotes:'“' '”'}
+  .review .by{font-size:.76rem;color:var(--dim)}
+  .review .by b{color:var(--cream);font-weight:600}
+
+  /* ---------- FAQ ---------- */
+  .faq{margin:26px 0}
+  .faq details{
+    border:1px solid var(--line);border-radius:14px;padding:12px 15px;margin-bottom:9px;background:rgba(0,0,0,.22);
+  }
+  .faq summary{cursor:pointer;font-weight:600;font-size:.94rem;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:'▸ ';color:var(--red)}
+  .faq details[open] summary::before{content:'▾ '}
+  .faq p{margin:9px 0 2px;font-size:.9rem;color:var(--dim)}
+
+  /* ---------- ข้อตกลง ---------- */
+  .agree{
+    display:flex;gap:11px;align-items:flex-start;font-size:.86rem;color:var(--dim);
+    border:1px dashed var(--line);border-radius:14px;padding:13px 15px;margin:24px 0 0;
+  }
+  .agree input{width:19px;height:19px;accent-color:var(--green);flex:none;margin-top:2px}
+  .agree b{color:var(--cream)}
+
+  /* ---------- ปุ่มขอคิดดูก่อน ---------- */
+  .think{
+    display:block;margin:14px auto 0;background:none;border:0;color:var(--dim);
+    font-size:.85rem;text-decoration:underline;padding:8px;
+  }
+
+  .live{display:inline-flex;align-items:center;gap:7px;font-size:.75rem;color:var(--dim)}
+  .live::before{content:'';width:8px;height:8px;border-radius:50%;background:#2ecf8f;box-shadow:0 0 10px #2ecf8f;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{50%{opacity:.25}}
+
+  .achv{
+    display:inline-block;border:1px solid rgba(240,168,48,.5);background:rgba(240,168,48,.12);
+    color:var(--amber);border-radius:12px;padding:9px 15px;font-size:.82rem;font-weight:600;margin-bottom:14px;
+  }
+
+  /* ---------- the question ---------- */
+  .ask{text-align:center;margin-top:38px}
+  .ask h2{font-size:1.5rem;margin:0 0 4px;font-weight:800}
+  .ask p{color:var(--dim);font-size:.9rem;margin:0}
+  .arena{position:relative;min-height:230px;margin-top:20px}
+  button{font-family:inherit;cursor:pointer;border:0}
+  .btn-yes{
+    display:block;width:100%;padding:19px 22px;border-radius:16px;
+    background:linear-gradient(135deg,var(--green),#12b48f);color:#04140f;
+    font-size:1.22rem;font-weight:800;letter-spacing:.01em;
+    box-shadow:0 12px 34px rgba(13,140,114,.36);
+    transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s;
+  }
+  .btn-yes:active{transform:scale(.97)}
+  .btn-no{
+    position:absolute;left:50%;top:120px;transform:translateX(-50%);
+    padding:13px 26px;border-radius:14px;background:rgba(255,255,255,.07);
+    border:1px solid var(--line);color:var(--dim);font-size:1rem;
+    transition:left .32s cubic-bezier(.34,1.56,.64,1),top .32s cubic-bezier(.34,1.56,.64,1),transform .2s;
+  }
+  .btn-no.loose{transform:none}
+  .taunt{min-height:1.6em;text-align:center;color:var(--amber);font-size:.95rem;margin-top:10px}
+
+  .foot{text-align:center;color:var(--dim);font-size:.75rem;margin-top:46px;line-height:1.9}
+
+  /* ---------- overlays ---------- */
+  .screen{
+    position:fixed;inset:0;z-index:6;display:none;place-items:center;text-align:center;
+    padding:32px 22px;background:rgba(11,7,8,.86);backdrop-filter:blur(12px);
+    overflow-y:auto;
+  }
+  .screen.on{display:grid}
+  .screen .inner{max-width:460px;margin:auto}
+  .big{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2.2rem,11vw,3.2rem);line-height:1.05;margin:0 0 14px;
+    background:linear-gradient(100deg,var(--amber),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .screen .shout{
+    font-size:1.28rem;font-weight:800;line-height:1.5;margin:24px 0 10px;
+    padding:16px 18px;border-radius:16px;color:#1b0f01;
+    background:linear-gradient(135deg,var(--amber),#ffd076);
+    box-shadow:0 14px 34px rgba(240,168,48,.28);
+  }
+  .screen p{color:var(--dim);font-size:.95rem;margin:6px 0}
+  .recap{margin:22px 0;padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.05);font-size:1.02rem;font-weight:600}
+  .recap span{display:block;color:var(--dim);font-weight:400;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+  .ghost{background:none;border:1px solid var(--line);color:var(--cream);padding:12px 22px;border-radius:12px;font-size:.95rem;margin-top:14px}
+  .undo{display:inline-block;margin-top:22px;font-size:.78rem;color:var(--dim);text-decoration:underline;background:none;padding:6px}
+  #confetti{position:fixed;inset:0;z-index:8;pointer-events:none;display:none}
+  #confetti.on{display:block}
+
+  @media (prefers-reduced-motion:reduce){
+    #spiral,#spiral .b,body.party #spiral{animation:none!important}
+    .marquee span{animation:none;padding-left:0}
+    .live::before{animation:none}
+    .btn-no{transition:none}
+    .btn-yes{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<svg id="spiral" viewBox="-500 -500 1000 1000" aria-hidden="true">
+  <g class="a"><path id="sp1" fill="none" stroke="#0d8c72" stroke-width="7" stroke-linecap="round"/></g>
+  <g class="b"><path id="sp2" fill="none" stroke="#e0402c" stroke-width="4.5" stroke-linecap="round"/></g>
+</svg>
+<div class="veil" aria-hidden="true"></div>
+
+<div class="marquee" aria-hidden="true"><span id="ticker">🚨 ประกาศด่วน · มีผู้ชาย 1 คนกำลังรอคำตอบอยู่ · รอบนี้จัดขึ้นเพียงครั้งเดียว · ไม่มีรอบชดเชย · ห้ามพลาด · 🚨 &nbsp;&nbsp;&nbsp;</span></div>
+
+<main class="wrap">
+
+  <p class="kicker">คำเชิญ 1 ใบ · one (1) invitation</p>
+  <h1 id="hero-name">ปอนด์</h1>
+  <div class="typed" id="typed"></div>
+  <p class="fineprint">ใช้เวลา 30 วิ · ไม่มีขายของ · ไม่ต้องสมัครอะไรทั้งนั้น</p>
+
+  <section class="card">
+    <div class="label">Now showing</div>
+    <div class="film-title">VERTIGO</div>
+    <div class="film-sub">1958 · dir. Alfred Hitchcock · 128 นาที</div>
+    <div class="rows">
+      <div class="row"><i>📍</i><b>House Samyan</b></div>
+      <div class="row"><i>🗓</i><b>พฤหัสบดี 20 สิงหาคม</b></div>
+      <div class="row"><i>⏰</i><b>รอบ 19:05</b></div>
+    </div>
+    <div class="badges">
+      <span class="badge gold">⭐ 9.9/10 — จากรีวิว 1 คน (เค้าเอง)</span>
+      <span class="badge hot">🔥 เหลือ 2 ที่นั่ง (เค้าจองไว้แล้ว)</span>
+      <span class="badge">🍿 ป๊อปคอร์นฟรี 100%</span>
+      <span class="badge">🚫 ไม่มีสปอยล์ (เค้ายังไม่เคยดูในโรง)</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="label">เหลือเวลาอีก</div>
+    <div class="clock">
+      <div class="unit"><b id="d">–</b><span>วัน</span></div>
+      <div class="unit"><b id="h">–</b><span>ชม.</span></div>
+      <div class="unit"><b id="m">–</b><span>นาที</span></div>
+      <div class="unit"><b id="s">–</b><span>วินาที</span></div>
+    </div>
+    <p class="clock-note" id="clock-note">ไม่กดดันน้า (กดดัน)</p>
+  </section>
+
+  <section class="ticket" id="ticket">
+    <div class="adm">ADMIT TWO</div>
+    <div class="who" id="ticket-who">ปอนด์ + เค้า</div>
+    <div class="meta">HOUSE SAMYAN · THU 20 AUG · 19:05 · SEAT: ข้างกัน</div>
+    <div class="status" id="ticket-status">status: pending…</div>
+  </section>
+
+  <section class="card slider-card">
+    <div class="label">ระดับความอยากไปของเธอ</div>
+    <div class="slider-val" id="want-val">100%</div>
+    <input type="range" id="want" min="0" max="100" value="100" aria-label="ระดับความอยากไป">
+    <p class="slider-say" id="want-say">ลากเล่นได้เลย ระบบ calibrate มาให้แล้ว 🌀</p>
+  </section>
+
+  <div class="memes">
+    <p class="meme">หนังเรื่องนี้เกี่ยวกับผู้ชายคนนึงที่ตามผู้หญิงคนนึงไปทุกที่ — <em>เค้าไม่ได้จะสื่ออะไรน้า</em> ก็แค่หนังมันดีจริง</p>
+    <p class="meme">ปี 2012 นักวิจารณ์ทั่วโลกโหวตให้เรื่องนี้เป็น <em>หนังที่ดีที่สุดตลอดกาล</em> ของ Sight &amp; Sound ไปเสิร์ชดูได้ ไม่ได้มั่ว</p>
+    <p class="meme">128 นาที = <em>7,680 วินาที</em> ที่เธอต้องนั่งข้างเค้า ในความมืด เงียบๆ … ฟังดูน่ากลัวแต่มันคือโรงหนังปกติ</p>
+  </div>
+
+  <div class="label">รีวิวจากผู้ใช้จริง (verified 🤝)</div>
+  <div class="reviews">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <q>ไปเถอะ มันซ้อมพูดประโยคชวนมา 3 วันแล้ว หน้ากระจกอ่ะ เห็นกับตา</q>
+      <div class="by">— <b>เพื่อนสนิทเค้า</b> · ผู้ใช้ที่ไม่ประสงค์ออกนาม</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <q>ลูกแม่ทำกับข้าวไม่เป็นนะ แต่เลือกหนังเก่ง</q>
+      <div class="by">— <b>แม่เค้า</b> · reviewer ระดับ Top 1</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★☆</div>
+      <q>หนังผมเกี่ยวกับการตกหลุมรักจนหัวหมุน ก็… เหมาะสมดีนะครับสถานการณ์นี้</q>
+      <div class="by">— <b>อัลเฟรด ฮิตช์ค็อก</b> · (ไม่ได้พูดจริง เค้าแต่งเอง)</div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="label">คำถามที่พบบ่อย</div>
+    <details>
+      <summary>ต้องคุยเยอะไหม เค้าเขินอ่ะ</summary>
+      <p>ไม่ต้องเลย หนังยาว 128 นาทีที่ห้ามคุย ถือว่าเป็นการออกเดตที่ปลอดภัยที่สุดในโลก</p>
+    </details>
+    <details>
+      <summary>ถ้าหนังน่าเบื่อจะทำยังไง</summary>
+      <p>หนังไม่น่าเบื่อ แต่ถ้าเบื่อจริง เธอมีสิทธิ์ด่าเค้าได้เต็มที่ตอนกินข้าวหลังหนัง (ใช่ มีมื้อหลังหนังด้วย เค้าแอบใส่มาในแพ็กเกจ)</p>
+    </details>
+    <details>
+      <summary>นี่คือเดตใช่ไหม</summary>
+      <p>เค้าจะบอกว่า "ก็แล้วแต่เธอจะเรียก" แต่ความจริงคือ… <em>ใช่</em></p>
+    </details>
+    <details>
+      <summary>ถ้าวันนั้นติดธุระล่ะ</summary>
+      <p>บอกมาตรงๆ ได้เลย เค้าไม่งอน (งอน 3 นาที แล้วก็หาวันใหม่)</p>
+    </details>
+  </div>
+
+  <label class="agree">
+    <input type="checkbox" id="agree" checked>
+    <span>ฉันได้อ่านและยอมรับว่า <b>เค้าก็น่ารักอยู่นะ</b> และการติ๊กออกจะไม่มีผลใดๆ ทั้งสิ้น</span>
+  </label>
+
+  <section class="ask">
+    <h2>ไปด้วยกันไหม</h2>
+    <p>เลือกได้ 2 ทาง (จริงๆ นะ)</p>
+    <div class="arena" id="arena">
+      <button class="btn-yes" id="yes">ไปสิ 🌀</button>
+      <button class="btn-no" id="no">ไม่ไป</button>
+    </div>
+    <p class="taunt" id="taunt" aria-live="polite"></p>
+    <button class="think" id="think">ขอคิดดูก่อนได้ไหม 🤔</button>
+  </section>
+
+  <p class="foot">
+    <span class="live" id="live">มีคนกำลังดูหน้านี้ 1 คน (คือเธอ)</span><br>
+    เค้ากดรีเฟรชรอคำตอบไปแล้ว <b id="refresh-count">47</b> ครั้ง<br>
+    เว็บนี้ไม่เก็บข้อมูลอะไรเลย ไม่มีเซิร์ฟเวอร์ ไม่มีใครแอบดู<br>
+    made with 🌀 and mild anxiety
+  </p>
+</main>
+
+<canvas id="confetti"></canvas>
+
+<div class="screen" id="yay">
+  <div class="inner">
+    <div class="achv">🏆 achievement unlocked: ทำให้ผู้ชายคนนึงยิ้มทั้งวัน</div>
+    <h2 class="big">ตกลงงงง!</h2>
+    <p>เค้ากดรัวๆ อยู่ตรงนี้แล้ว 🎉🌀🍿</p>
+    <div class="recap"><span>เจอกัน</span>พฤหัสบดี 20 สิงหาคม · 19:05<br>House Samyan</div>
+    <p class="shout">แคปหน้าจอนี้ ส่งมาทักด้วยนะ 📸</p>
+    <p>เว็บนี้ไม่มีระบบส่งข้อความจริงๆ ถ้าเธอไม่ทัก เค้าจะไม่มีทางรู้เลยว่าเธอกดตกลง แล้วเค้าจะนั่งเฝ้าโทรศัพท์ทั้งคืน</p>
+    <button class="undo" id="undo-yes">กดผิด? กดตรงนี้เพื่อย้อนกลับ</button>
+  </div>
+</div>
+
+<div class="screen" id="nay">
+  <div class="inner">
+    <h2 class="big">ไม่เป็นไรน้า 🥲</h2>
+    <p>เค้าถามเพราะอยากชวนจริงๆ ไม่ได้จะกวน — ปุ่มมันหนีเพราะเค้าเขียนโค้ดให้มันหนีเอง ขอโทษที</p>
+    <p>ไว้โอกาสหน้าน้า Hitchcock ยังอยู่ตรงนั้นแหละ ไม่ไปไหน</p>
+    <button class="ghost" id="undo-no">เอ๊ะ ขอเปลี่ยนใจ 🌀</button>
+  </div>
+</div>
+
+<script>
+const CONFIG = {
+  her: 'ปอนด์',
+  me: 'เค้า',
+  venue: 'House Samyan',
+  when: '2026-08-20T19:05:00+07:00',
+  whenLabel: 'พฤหัสบดี 20 สิงหาคม · 19:05',
+  dodges: 5,
+};
+
+const $ = id => document.getElementById(id);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- ชื่อ (รองรับ ?to=ชื่อ) ---------- */
+const param = new URLSearchParams(location.search).get('to');
+const her = (param || CONFIG.her).trim().slice(0, 24) || CONFIG.her;
+$('hero-name').textContent = her;
+$('ticket-who').textContent = her + ' + ' + CONFIG.me;
+document.title = her + '… มีเรื่องจะถาม 🌀';
+
+/* ---------- เกลียวแบบ Saul Bass ---------- */
+function spiral(turns, spacing, phase){
+  let d = '';
+  for (let t = 0; t <= turns * Math.PI * 2; t += 0.09){
+    const r = spacing * t;
+    const x = (r * Math.cos(t + phase)).toFixed(1);
+    const y = (r * Math.sin(t + phase) * 0.82).toFixed(1);
+    d += (d ? 'L' : 'M') + x + ' ' + y;
+  }
+  return d;
+}
+$('sp1').setAttribute('d', spiral(7, 11, 0));
+$('sp2').setAttribute('d', spiral(6, 13.5, Math.PI));
+
+/* ---------- พิมพ์ทีละตัว ---------- */
+const lines = ['มีเรื่องจะถาม', 'อย่าเพิ่งปัดขึ้นนะ', 'เลื่อนลงมาก่อน 🌀'];
+const typed = $('typed');
+if (reduced){
+  typed.textContent = lines.join(' · ');
+} else {
+  let li = 0, ci = 0, out = '';
+  (function tick(){
+    if (li >= lines.length){ typed.innerHTML = out.replace(/\n/g,'<br>'); return; }
+    ci++;
+    const shown = out + lines[li].slice(0, ci);
+    typed.innerHTML = shown.replace(/\n/g,'<br>') + '<span class="caret">.</span>';
+    if (ci >= lines[li].length){ out += lines[li] + '\n'; li++; ci = 0; setTimeout(tick, 520); }
+    else setTimeout(tick, 55);
+  })();
+}
+
+/* ---------- นับถอยหลัง ---------- */
+const target = new Date(CONFIG.when).getTime();
+const pad = n => String(n).padStart(2, '0');
+function tickClock(){
+  const gap = target - Date.now();
+  if (gap <= 0){
+    ['d','h','m','s'].forEach(k => $(k).textContent = '00');
+    $('clock-note').textContent = 'รอบนี้เริ่มไปแล้ว… เอาเป็นรอบหน้าไหม 🥲';
+    return;
+  }
+  const sec = Math.floor(gap / 1000);
+  $('d').textContent = pad(Math.floor(sec / 86400));
+  $('h').textContent = pad(Math.floor(sec / 3600) % 24);
+  $('m').textContent = pad(Math.floor(sec / 60) % 60);
+  $('s').textContent = pad(sec % 60);
+}
+tickClock();
+setInterval(tickClock, 1000);
+
+/* ---------- สไลเดอร์ที่ลากลงยังไงก็เด้งกลับ ---------- */
+const want = $('want'), wantVal = $('want-val'), wantSay = $('want-say');
+const says = [
+  'เอ๊ะ ลากลงทำไม 😭 ระบบขอ recalibrate ใหม่นะ',
+  'ค่าที่ได้ผิดปกติ กำลังซ่อม… เรียบร้อย กลับมา 100% แล้ว',
+  'sensor เสีย ขอโทษด้วย ปกติมันคือ 100% ตลอด',
+  'เธอลากได้ แต่ระบบไม่ยอมรับค่าต่ำกว่า 100 ขอโทษจริงๆ 🫠',
+  'ok ลากไปเถอะ เดี๋ยวมันก็เด้งกลับเอง (มันเด้งกลับแล้ว)',
+];
+let wantTries = 0, wantTimer;
+want.addEventListener('input', () => {
+  wantVal.textContent = want.value + '%';
+  if (want.value >= 100) return;
+  clearTimeout(wantTimer);
+  wantTimer = setTimeout(() => {
+    want.value = 100;
+    wantVal.textContent = '100%';
+    wantSay.textContent = says[wantTries % says.length];
+    wantTries++;
+  }, 550);
+});
+
+/* ---------- ติ๊กออกไม่ได้ ---------- */
+const agree = $('agree');
+agree.addEventListener('click', e => {
+  if (!agree.checked){
+    e.preventDefault();
+    agree.checked = true;
+    agree.closest('.agree').querySelector('span').innerHTML =
+      'ติ๊กออกไม่ได้จ้า <b>เค้าน่ารักตามข้อกำหนดและเงื่อนไข</b> ✅';
+  }
+});
+
+/* ---------- ตัวเลขกวนๆ ที่ footer ---------- */
+const rc = $('refresh-count');
+setInterval(() => { rc.textContent = +rc.textContent + 1; }, 4200);
+
+/* ---------- ปุ่มไม่ไป: หนี 5 ครั้งแล้วยอม ---------- */
+const arena = $('arena'), no = $('no'), yes = $('yes'), taunt = $('taunt');
+const taunts = [
+  'เอ๊ะ?',
+  'กดไม่โดนอ่ะดิ 😐',
+  'ระบบแจ้งว่า… ไม่ได้ค่ะ',
+  'ครั้งที่ 4 แล้วนะ ยอมเถอะ',
+  'ok fine… ครั้งหน้าให้กดจริงละ 🫠',
+];
+let dodged = 0;
+
+function dodge(e){
+  if (dodged >= CONFIG.dodges) return false;
+  if (e) e.preventDefault();
+  const box = arena.getBoundingClientRect();
+  const w = no.offsetWidth, h = no.offsetHeight;
+  const minY = yes.offsetHeight + 12;                  // ห้ามไปทับปุ่มเขียว
+  const maxX = Math.max(0, box.width - w);
+  const maxY = Math.max(minY, box.height - h);
+  let x, y, tries = 0;
+  do {
+    x = Math.random() * maxX;
+    y = minY + Math.random() * (maxY - minY);
+    tries++;
+  } while (tries < 12 && Math.hypot(x - no.offsetLeft, y - no.offsetTop) < Math.min(90, maxX * 0.5));
+  no.classList.add('loose');
+  no.style.left = x + 'px';
+  no.style.top = y + 'px';
+  dodged++;
+  taunt.textContent = taunts[dodged - 1];
+  yes.style.fontSize = (1.22 + dodged * 0.09) + 'rem'; // ปุ่มไปสิโตขึ้นเรื่อยๆ
+  if (dodged >= CONFIG.dodges) no.textContent = 'ไม่ไป (เอาจริงดิ)';
+  return true;
+}
+
+no.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') dodge(e); });
+no.addEventListener('touchstart', dodge, { passive: false });
+no.addEventListener('click', e => { if (!dodge(e)) decline(); });
+
+/* ---------- สองปลายทาง ---------- */
+function show(id, on){ $(id).classList.toggle('on', on); }
+
+function accept(save){
+  show('nay', false);
+  show('yay', true);
+  document.body.classList.add('party');
+  $('ticket').classList.add('stamped');
+  $('ticket-status').textContent = 'status: confirmed ✓';
+  if (save !== false) localStorage.setItem('vertigo-invite', 'yes');
+  boom();
+}
+function decline(){
+  show('yay', false);
+  show('nay', true);
+  localStorage.setItem('vertigo-invite', 'no');
+}
+function reset(){
+  localStorage.removeItem('vertigo-invite');
+  show('yay', false); show('nay', false);
+  document.body.classList.remove('party');
+  $('ticket').classList.remove('stamped');
+  $('ticket-status').textContent = 'status: pending…';
+  $('confetti').classList.remove('on');
+  dodged = 0; taunt.textContent = '';
+  no.textContent = 'ไม่ไป'; no.classList.remove('loose');
+  no.style.left = ''; no.style.top = '';
+  yes.style.fontSize = '';
+}
+yes.addEventListener('click', () => accept(true));
+
+/* ---------- ขอคิดดูก่อน: คิดให้ 3 วิ พอ ---------- */
+const think = $('think');
+think.addEventListener('click', () => {
+  if (think.disabled) return;
+  think.disabled = true;
+  let n = 3;
+  think.textContent = 'กำลังคิดให้… ' + n;
+  const iv = setInterval(() => {
+    n--;
+    if (n > 0){ think.textContent = 'กำลังคิดให้… ' + n; return; }
+    clearInterval(iv);
+    think.textContent = 'คิดเสร็จแล้ว คำตอบคือไป 🌀 (กดปุ่มเขียวได้เลย)';
+    think.disabled = false;
+    yes.animate(
+      [{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],
+      {duration:600, iterations:2}
+    );
+  }, 900);
+});
+$('undo-yes').addEventListener('click', reset);
+$('undo-no').addEventListener('click', () => accept(true));
+
+const saved = localStorage.getItem('vertigo-invite');
+if (saved === 'yes') accept(false);
+else if (saved === 'no') show('nay', true);
+
+/* ---------- confetti (วาดเอง ไม่ใช้ไลบรารี) ---------- */
+function boom(){
+  const cv = $('confetti');
+  cv.classList.add('on');
+  if (reduced) return;
+  const ctx = cv.getContext('2d');
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  function size(){ cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  size(); addEventListener('resize', size);
+
+  const colors = ['#f0a830','#0d8c72','#e0402c','#f4ead7','#12b48f'];
+  const emojis = ['🌀','🍿','🎬','🎉','💚','🎟️'];
+  const bits = Array.from({length: 130}, (_, i) => ({
+    x: Math.random() * innerWidth,
+    y: -20 - Math.random() * innerHeight * 0.6,
+    r: 4 + Math.random() * 7,
+    vy: 1.6 + Math.random() * 3.2,
+    vx: -1.2 + Math.random() * 2.4,
+    a: Math.random() * Math.PI,
+    va: -0.14 + Math.random() * 0.28,
+    c: colors[(Math.random() * colors.length) | 0],
+    e: i % 4 === 0 ? emojis[(Math.random() * emojis.length) | 0] : null,
+  }));
+  const until = Date.now() + 9000;
+  (function frame(){
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    for (const b of bits){
+      b.x += b.vx; b.y += b.vy; b.a += b.va;
+      if (b.y > innerHeight + 30){ b.y = -20; b.x = Math.random() * innerWidth; }
+      ctx.save();
+      ctx.translate(b.x, b.y); ctx.rotate(b.a);
+      if (b.e){
+        ctx.font = (b.r * 3.4) + 'px serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(b.e, 0, 0);
+      } else {
+        ctx.fillStyle = b.c;
+        ctx.fillRect(-b.r / 2, -b.r / 2, b.r, b.r * 0.62);
+      }
+      ctx.restore();
+    }
+    if (Date.now() < until) requestAnimationFrame(frame);
+    else { ctx.clearRect(0, 0, innerWidth, innerHeight); cv.classList.remove('on'); }
+  })();
+}
+</script>
+</body>
+</html>
