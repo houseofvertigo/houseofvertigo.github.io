@@ -6,7 +6,7 @@
 
   จุดที่ต้องเขียนเอง ค้นคำว่า  ✎ EDIT  ในไฟล์นี้:
     ✎ EDIT pen-1..pen-4   โน้ตปากกาแดง 4 จุด
-    ✎ EDIT brief          ข่าวสั้น (เว้นไว้ให้เขียนเอง)
+    ✎ EDIT brief          ข่าวสั้น 2 ข่าว
     ✎ EDIT editor-note    บันทึกบรรณาธิการ + ลายเซ็น
 -->
 <html lang="th">
@@ -18,6 +18,13 @@
 <meta name="description" content="หนังสือพิมพ์ประจำกรุงเทพฯ ฉบับที่ 1">
 <meta property="og:title" content="The Kuro Times — ฉบับที่ 1">
 <meta property="og:description" content="หนังสือพิมพ์ประจำกรุงเทพฯ · ราคา: ขนม 1 ห่อ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://houseofvertigo.github.io/kuro-times/">
+<meta property="og:image" content="https://houseofvertigo.github.io/kuro-times/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Kuro Times: สภา กทม. ลงมติเอกฉันท์ ทุกอย่างในกรุงเทพฯ ต้องเป็นญี่ปุ่น">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F3EBDD">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,12 +162,13 @@
   .toc li{display:flex;align-items:baseline;padding:5px 0;font:600 .9rem/1.5 var(--head)}
   .toc li span{flex:1;border-bottom:2px dotted var(--ink);margin:0 .4rem}
   .toc-note{font-size:.8rem;line-height:1.65;margin-top:8px;padding-top:8px;border-top:var(--hair)}
-  .ph{border:2px dashed var(--ink);padding:14px;text-align:center;font:600 .9rem/1.5 var(--head);margin:0 0 10px}
+  .briefs li{padding:9px 0;border-top:var(--hair);line-height:1.7}
+  .briefs li:first-child{border-top:0;padding-top:0}
+  .briefs li::before{content:"";display:inline-block;width:.5em;height:.5em;background:var(--red);margin-right:.5em;vertical-align:.1em}
   .editor h2{font:800 1.5rem/1.35 var(--head);margin:0 0 6px}
-  .ph-lines{min-height:8rem;line-height:2rem;font:600 .95rem/2rem var(--head);
-    background-image:repeating-linear-gradient(to bottom,transparent 0 calc(2rem - 1px),var(--ink) calc(2rem - 1px) 2rem)}
   .sign{text-align:right;margin-top:12px;font:600 .82rem/1.9 var(--head)}
-  .sign-line{display:inline-block;min-width:11rem;border-bottom:2px solid var(--ink);text-align:center}
+  .sign-line{display:inline-block;min-width:11rem;border-bottom:2px solid var(--ink);text-align:center;
+    font:400 1.15rem/1.5 var(--hand);color:var(--pen)}
   .colophon{margin-top:22px;padding-top:10px;border-top:var(--rule);font:600 .76rem/1.7 var(--head);text-align:center}
 
   /* ---------- tap-to-play bits (screen only) ---------- */
@@ -336,7 +344,6 @@
     .gov figure .art{width:70%;margin:0 auto}
     .nameplate h1{font-size:2.6rem}
     .lead{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
-    .ph-lines{min-height:6rem}
     .more,.tap-tag,.lamp-btn,.cute,.toast{display:none}
     .story,.gov-item,figure,.bottom>section{break-inside:avoid}
   }
@@ -878,21 +885,23 @@
       <p class="toc-note">ฉบับนี้มีหน้าเดียว ทุกข่าวจึงอยู่หน้า 1 · แก้ข่าว: ไม่มี เนื่องจากเป็นฉบับแรกและกองบรรณาธิการยังไม่ทันผิด</p>
     </section>
 
-    <!-- ✎ EDIT brief: ข่าวสั้นที่เขียนเอง (ใช้เฉพาะเรื่องที่รู้จริงว่าเธอชอบหรือไม่ชอบ) หรือลบกล่องนี้ทิ้ง -->
+    <!-- ✎ EDIT brief: ข่าวสั้น (ใช้เฉพาะเรื่องที่รู้จริงว่าเธอชอบหรือไม่ชอบ) หรือลบกล่องนี้ทิ้ง -->
     <section class="brief">
       <p class="kicker">ข่าวสั้น</p>
-      <div class="ph">[ ข่าวสั้นรอบรรณาธิการเขียน ]</div>
-      <div class="ph">[ ข่าวสั้นรอบรรณาธิการเขียน ]</div>
+      <ul class="briefs">
+        <li>กรมอุตุฯ พยากรณ์อากาศวันพรุ่งนี้ <span class="nw">เหมาะแก่การงีบ</span> เช่นเดียวกับวันนี้ และทุกวัน</li>
+        <li>แมวประจำฉบับยังไม่มีชื่อ ทำเนียบเปิดรับชื่อจากท่าน<span class="nw">ผู้ว่าฯ</span> เพียงช่องทางเดียว</li>
+      </ul>
     </section>
 
-    <!-- ✎ EDIT editor-note: เขียนบันทึกแทนบรรทัดในวงเล็บ แล้วใส่ชื่อในช่องลงชื่อ -->
+    <!-- ✎ EDIT editor-note: บันทึกบรรณาธิการ และชื่อในช่องลงชื่อ (ตอนนี้ลงว่า กองบรรณาธิการ) -->
     <section class="editor">
       <p class="kicker">ความเห็น</p>
       <h2>บันทึกบรรณาธิการ</h2>
-      <div class="ph-lines">
-        <p>[ บันทึกบรรณาธิการ — เขียนตรงนี้ ]</p>
+      <div class="body">
+        <p>หนังสือพิมพ์ฉบับนี้พิมพ์ขึ้นเพียงฉบับเดียว สำหรับผู้อ่านเพียงคนเดียว ทุกข่าวผ่านการตรวจทานแล้วว่าเป็นไปตามรสนิยมของท่าน<span class="nw">ผู้ว่าฯ</span> หากพบข่าวใดคลาดเคลื่อน กองบรรณาธิการยินดีแก้ไขในฉบับหน้า</p>
       </div>
-      <p class="sign">ลงชื่อ <span class="sign-line">[ ชื่อ ]</span><br>บรรณาธิการบริหาร <span class="nw">The Kuro Times</span></p>
+      <p class="sign">ลงชื่อ <span class="sign-line">กองบรรณาธิการ</span><br>บรรณาธิการบริหาร <span class="nw">The Kuro Times</span></p>
     </section>
   </div>
 
