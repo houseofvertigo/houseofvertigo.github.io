@@ -14,9 +14,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>The Kuro Times — ฉบับที่ 1</title>
-<meta name="description" content="หนังสือพิมพ์ประจำเมืองคุโระ ฉบับที่ 1">
+<meta name="description" content="หนังสือพิมพ์ประจำกรุงเทพฯ ฉบับที่ 1">
 <meta property="og:title" content="The Kuro Times — ฉบับที่ 1">
-<meta property="og:description" content="หนังสือพิมพ์ประจำเมืองคุโระ · ราคา: ขนม 1 ห่อ">
+<meta property="og:description" content="หนังสือพิมพ์ประจำกรุงเทพฯ · ราคา: ขนม 1 ห่อ">
 <meta name="theme-color" content="#F3EBDD">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +84,7 @@
   .motto{font:700 1rem/1.45 var(--head);margin-top:12px;padding-top:10px;border-top:2px solid var(--paper)}
   .pen--mast{margin:10px 0 0 auto;transform:rotate(-3deg);transform-origin:right center}
   .civic{display:flex;align-items:center;gap:16px;margin-top:10px}
-  .ear--seal{flex:none;width:128px;text-align:center}
+  .ear--seal{flex:none;width:116px;text-align:center}
   .seal{display:block;width:96px;height:auto;margin:4px auto 6px;transform:rotate(-5deg)}
   .ear-k{font:700 .7rem/1.35 var(--head);white-space:nowrap}
   .ear-s{font:600 .66rem/1.4 var(--head);margin-top:1px}
@@ -195,7 +195,7 @@
     .side{display:flex;flex-direction:column;grid-column:2;grid-row:1;padding-left:26px;border-left:var(--hair)}
     .masthead{display:block}
     .pen--mast{margin:10px 0 0 auto}
-    .civic{margin-top:6px}
+    .civic{margin-top:12px}
     .ticker{margin-top:14px}
     .lead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:24px;align-items:start;
       grid-template-areas:"kick kick" "head head" "fig text"}
@@ -267,29 +267,29 @@
       <header class="masthead">
         <div class="nameplate">
           <h1><span class="the">The</span> <span>Kuro</span> <span>Times</span></h1>
-          <p class="motto">หนังสือพิมพ์ประจำเมือง<span class="nw">คุโระ</span></p>
+          <p class="motto">หนังสือพิมพ์ประจำ<span class="nw">กรุงเทพฯ</span></p>
         </div>
 
         <!-- ✎ EDIT pen-1: โน้ตปากกาแดงข้างหัวหนังสือ -->
-        <p class="pen pen--mast"><svg aria-hidden="true"><use href="#pen-arrow"/></svg>[โน้ต #1 — เขียนตรงนี้]</p>
+        <p class="pen pen--mast"><svg aria-hidden="true"><use href="#pen-arrow"/></svg><span>พิมพ์ฉบับเดียว ส่งถึงท่าน<span class="nw">ผู้ว่าฯ</span> โดยตรง</span></p>
 
         <div class="civic">
           <div class="ear--seal">
-            <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="ตราเทศบาลนครคุโระ รูปแมวดำใต้จันทร์เสี้ยว">
+            <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="ตรากรุงเทพมหานคร รูปแมวดำใต้จันทร์เสี้ยว">
   <rect x="2" y="2" width="116" height="116" rx="8" fill="#D9381E"/>
   <rect x="9" y="9" width="102" height="102" rx="4" fill="none" stroke="#F3EBDD" stroke-width="3"/>
   <path d="M93 17a9 9 0 1 0 7 14a7 7 0 1 1 -7 -14z" fill="#F3EBDD"/>
   <use href="#cat" x="36" y="13" width="48" height="58" fill="#F3EBDD" style="--eye:#D9381E"/>
   <path d="M64 69.5 Q88 71 86 55 Q85.5 48 80 47" fill="none" stroke="#F3EBDD" stroke-width="5" stroke-linecap="round"/>
   <path d="M20 76 H100" stroke="#F3EBDD" stroke-width="2"/>
-  <text x="60" y="100" text-anchor="middle" font-family="Kanit, sans-serif" font-weight="800" font-size="17" fill="#F3EBDD" textLength="82" lengthAdjust="spacingAndGlyphs">เมืองคุโระ</text>
+  <text x="60" y="100" text-anchor="middle" font-family="Kanit, sans-serif" font-weight="800" font-size="19" fill="#F3EBDD">กรุงเทพฯ</text>
 </svg>
-            <p class="ear-k">ตราเทศบาลนคร<span class="nw">คุโระ</span></p>
+            <p class="ear-k">ตรากรุงเทพมหานคร</p>
             <p class="ear-s">• ตราประจำเมือง •</p>
           </div>
           <div class="weather">
             <p class="kicker">สภาพอากาศวันนี้</p>
-            <p class="wx">เหมาะแก่การงีบ</p>
+            <p class="wx">เหมาะแก่<span class="nw">การงีบ</span></p>
             <p class="odds">โอกาสงีบ 100%</p>
           </div>
         </div>
@@ -298,7 +298,7 @@
       <section class="gov" id="gov" aria-labelledby="gov-title">
         <div class="gov-head">
           <h2 id="gov-title">ข่าวทำเนียบ</h2>
-          <p>รายงานประจำวันจากทำเนียบนายกเทศมนตรี พร้อมคำชี้แจงจากโฆษกทำเนียบ</p>
+          <p>รายงานประจำวันจากทำเนียบ<span class="nw">ผู้ว่าฯ</span> <span class="nw">กทม.</span> พร้อมคำชี้แจงจากโฆษกทำเนียบ</p>
         </div>
 
         <figure>
@@ -348,39 +348,39 @@
         </figure>
 
         <!-- ✎ EDIT pen-3: โน้ตปากกาแดงในกล่องข่าวทำเนียบ -->
-        <p class="pen pen--gov"><svg aria-hidden="true"><use href="#pen-arrow"/></svg>[โน้ต #3 — เขียนตรงนี้]</p>
+        <p class="pen pen--gov"><svg aria-hidden="true"><use href="#pen-arrow"/></svg><span>โฆษกเห็นด้วยกับชาวเมืองทุกข้อ</span></p>
 
         <div class="gov-list">
           <div class="gov-item">
-            <h4>ท่าน<span class="nw">นายกฯ</span> ปฏิเสธคำชมเป็นครั้งที่ 47 ของเดือน ยืนยันว่าตัวเองธรรมดา ชาวเมืองเห็นต่างทั้งเมือง</h4>
-            <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบเคารพความเห็นของท่าน<span class="nw">นายกฯ</span> ทุกประการ แต่ขอเรียนว่าความเห็นดังกล่าวยังไม่ผ่านการรับรองจากสภา และสภาไม่มีแผนจะรับรอง</p>
+            <h4>ท่าน<span class="nw">ผู้ว่าฯ</span> ปฏิเสธคำชมเป็นครั้งที่ 47 ของเดือน ยืนยันว่าตัวเองธรรมดา ชาวเมืองเห็นต่างทั้งเมือง</h4>
+            <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบเคารพความเห็นของท่าน<span class="nw">ผู้ว่าฯ</span> ทุกประการ แต่ขอเรียนว่าความเห็นดังกล่าวยังไม่ผ่านการรับรองจากสภา และสภาไม่มีแผนจะรับรอง</p>
           </div>
           <div class="gov-item">
-            <h4>โฆษกทำเนียบชี้แจง ท่าน<span class="nw">นายกฯ</span> ไม่ได้ดื้อ แค่มีความมุ่งมั่นสูง หลังพบประวัติกินขนมที่ตัวเองแพ้มาตั้งแต่เด็ก</h4>
+            <h4>โฆษกทำเนียบชี้แจง ท่าน<span class="nw">ผู้ว่าฯ</span> ไม่ได้ดื้อ แค่มีความมุ่งมั่นสูง หลังพบประวัติกินขนมที่ตัวเองแพ้มาตั้งแต่เด็ก</h4>
             <p class="spox"><b>โฆษกทำเนียบ</b>ความมุ่งมั่นเป็นคุณสมบัติสำคัญของผู้นำ ทั้งนี้ ทำเนียบได้ติดฉลากขนมทุกห่อในตู้กับข้าวเรียบร้อยแล้ว เพื่อให้ความมุ่งมั่นของท่านเป็นไปอย่างปลอดภัย</p>
           </div>
           <div class="gov-item">
-            <h4>กรมการปกครองขอตรวจบัตรประชาชนท่าน<span class="nw">นายกฯ</span> เหตุหน้าเด็กไม่ตรงกับอายุจริง</h4>
-            <p class="spox"><b>โฆษกทำเนียบ</b>ท่าน<span class="nw">นายกฯ</span> ให้ความร่วมมือเต็มที่ ทำเนียบได้สำเนาบัตรประชาชนเตรียมไว้ 200 ชุด สำหรับการตรวจครั้งต่อ ๆ ไป</p>
+            <h4>กรมการปกครองขอตรวจบัตรประชาชนท่าน<span class="nw">ผู้ว่าฯ</span> เหตุหน้าเด็กไม่ตรงกับอายุจริง</h4>
+            <p class="spox"><b>โฆษกทำเนียบ</b>ท่าน<span class="nw">ผู้ว่าฯ</span> ให้ความร่วมมือเต็มที่ ทำเนียบได้สำเนาบัตรประชาชนเตรียมไว้ 200 ชุด สำหรับการตรวจครั้งต่อ ๆ ไป</p>
           </div>
           <div class="gov-item">
-            <h4>ผลวิจัยล่าสุด ความน่ารักของท่าน<span class="nw">นายกฯ</span> ไม่ขึ้นกับการสระผม</h4>
-            <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบรับทราบผลวิจัยโดยไม่มีข้อโต้แย้ง และขอสงวนสิทธิ์ไม่เปิดเผยตารางสระผมของท่าน<span class="nw">นายกฯ</span> ด้วยเหตุผลด้านความมั่นคง</p>
+            <h4>ผลวิจัยล่าสุด ความน่ารักของท่าน<span class="nw">ผู้ว่าฯ</span> ไม่ขึ้นกับสภาพอากาศ</h4>
+            <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบรับทราบผลวิจัยโดยไม่มีข้อโต้แย้ง และขอสงวนสิทธิ์ไม่เปิดเผยดัชนีความน่ารักรายวันของท่าน<span class="nw">ผู้ว่าฯ</span> ด้วยเหตุผลด้านความมั่นคง</p>
           </div>
           <div class="gov-item">
-            <h4>ท่าน<span class="nw">นายกฯ</span> ยืนยัน <span class="nw">เซนส์</span><span class="nw">ผู้หญิง</span>แม่นกว่าดาวเทียม นักวิทยาศาสตร์ไม่กล้าเถียง</h4>
-            <p class="spox"><b>โฆษกทำเนียบ</b>กรมอุตุนิยมวิทยาประจำเมืองได้ยื่นหนังสือขอใช้<span class="nw">เซนส์</span>ของท่าน<span class="nw">นายกฯ</span> ในการพยากรณ์อากาศแล้ว ขณะนี้อยู่ระหว่างการพิจารณา</p>
+            <h4>ท่าน<span class="nw">ผู้ว่าฯ</span> ยืนยัน <span class="nw">เซนส์</span><span class="nw">ผู้หญิง</span>แม่นกว่าดาวเทียม นักวิทยาศาสตร์ไม่กล้าเถียง</h4>
+            <p class="spox"><b>โฆษกทำเนียบ</b>กรมอุตุนิยมวิทยาประจำเมืองได้ยื่นหนังสือขอใช้<span class="nw">เซนส์</span>ของท่าน<span class="nw">ผู้ว่าฯ</span> ในการพยากรณ์อากาศแล้ว ขณะนี้อยู่ระหว่างการพิจารณา</p>
           </div>
           <div class="gov-item">
-            <h4>เทศบาลแจก<span class="nw">คูปอง</span>ไม่ต้องเกรงใจ หลังพบท่าน<span class="nw">นายกฯ</span> เกรงใจเกินค่ามาตรฐาน</h4>
-            <p class="spox"><b>โฆษกทำเนียบ</b>ขณะนี้ท่าน<span class="nw">นายกฯ</span> ยังไม่ได้ใช้<span class="nw">คูปอง</span>แม้แต่ใบเดียว เนื่องจากเกรงใจเทศบาล ทำเนียบจึงแจก<span class="nw">คูปอง</span>เพิ่มอีกหนึ่งใบ สำหรับใช้<span class="nw">คูปอง</span>ใบแรก</p>
+            <h4><span class="nw">กทม.</span> แจก<span class="nw">คูปอง</span>ไม่ต้องเกรงใจ หลังพบท่าน<span class="nw">ผู้ว่าฯ</span> เกรงใจเกินค่ามาตรฐาน</h4>
+            <p class="spox"><b>โฆษกทำเนียบ</b>ขณะนี้ท่าน<span class="nw">ผู้ว่าฯ</span> ยังไม่ได้ใช้<span class="nw">คูปอง</span>แม้แต่ใบเดียว เนื่องจากเกรงใจ <span class="nw">กทม.</span> ทำเนียบจึงแจก<span class="nw">คูปอง</span>เพิ่มอีกหนึ่งใบ สำหรับใช้<span class="nw">คูปอง</span>ใบแรก</p>
           </div>
           <div class="gov-item">
-            <h4>ไฟถนนทั้งเมืองเปิด 24 ชั่วโมงตามนโยบายท่าน<span class="nw">นายกฯ</span> <span class="nw">โฆษกฯ</span> ขอไม่ให้เหตุผล</h4>
+            <h4>ไฟถนนทั้ง<span class="nw">กรุงเทพฯ</span> เปิด 24 ชั่วโมงตามนโยบายท่าน<span class="nw">ผู้ว่าฯ</span> <span class="nw">โฆษกฯ</span> ขอไม่ให้เหตุผล</h4>
             <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบไม่มีข้อมูลเพิ่มเติมในประเด็นนี้ และยืนยันว่าค่าไฟฟ้าอยู่ในกรอบงบประมาณแล้ว</p>
           </div>
         </div>
-        <p class="gov-foot">โฆษกทำเนียบแถลงข่าวทุกวัน หลังท่าน<span class="nw">นายกฯ</span> ตื่น</p>
+        <p class="gov-foot">โฆษกทำเนียบแถลงข่าวทุกวัน หลังท่าน<span class="nw">ผู้ว่าฯ</span> ตื่น</p>
       </section>
     </div>
 
@@ -398,7 +398,7 @@
       <!-- ===== LEAD ===== -->
       <article class="story lead">
         <p class="kicker">การเมืองท้องถิ่น</p>
-        <h2>สภาเมืองลงมติเอกฉันท์ <span class="nw">ทุกอย่าง</span>ในเมืองต้องเป็นญี่ปุ่น</h2>
+        <h2>สภา <span class="nw">กทม.</span> ลงมติเอกฉันท์ <span class="nw">ทุกอย่าง</span>ใน<span class="nw">กรุงเทพฯ</span> ต้องเป็นญี่ปุ่น</h2>
 
         <figure>
           <svg class="art" viewBox="0 0 720 460" role="img" aria-label="ภาพประกอบ: โทริอิสีแดงตั้งอยู่ที่ประตูเมือง ด้านหลังเป็นตึกแถวที่ติดหลังคา ผ้าม่าน และโคมแบบญี่ปุ่น มีภูเขา ดวงอาทิตย์ ตู้กดน้ำ และเสาไฟที่เปิดอยู่ แมวดำตัวหนึ่งนั่งอยู่บนคานโทริอิ">
@@ -505,7 +505,7 @@
   <path d="M226 150 Q360 176 494 150 L490 166 Q360 191 230 166 Z" fill="#1A1A1A" stroke="#F3EBDD" stroke-width="2.5" stroke-linejoin="round"/>
   <path d="M246 161 Q360 184 474 161" fill="none" stroke="#F3EBDD" stroke-width="1.6"/>
   <rect x="318" y="196" width="84" height="27" fill="#1A1A1A" stroke="#F3EBDD" stroke-width="2"/>
-  <text x="360" y="215" text-anchor="middle" font-family="Kanit, sans-serif" font-weight="700" font-size="13" fill="#F3EBDD" textLength="70" lengthAdjust="spacingAndGlyphs">เมืองคุโระ</text>
+  <text x="360" y="215" text-anchor="middle" font-family="Kanit, sans-serif" font-weight="700" font-size="13" fill="#F3EBDD">กรุงเทพฯ</text>
   <!-- black cat on the beam -->
   <use href="#cat" x="240" y="104" width="44" height="53" fill="#1A1A1A" transform="rotate(7 262 156)"/>
   <path d="M278 152 Q294 160 288 180 Q284 192 294 197" fill="none" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
@@ -527,12 +527,12 @@
         <div class="lead-text">
           <p class="deck">มีผลทันทีหลังปิดประชุม กองช่างเริ่มติดตั้ง<span class="nw">โทริอิ</span>ที่ประตูเมืองตั้งแต่เช้ามืด</p>
           <div class="body">
-            <p class="byline">โดย ผู้สื่อข่าวสายสภาเทศบาล</p>
-            <p><span class="dl">เมือง<span class="nw">คุโระ</span> —</span> ที่ประชุมสภาเทศบาลนคร<span class="nw">คุโระ</span>มีมติเป็นเอกฉันท์ 12 ต่อ 0 เสียง ให้ทุกสิ่งในเขตเมืองต้องเป็นญี่ปุ่น ครอบคลุมตั้งแต่ป้ายรถเมล์ ตู้ไปรษณีย์ ไปจนถึงทรงพุ่มของต้นไม้ริมถนน</p>
+            <p class="byline">โดย ผู้สื่อข่าวสายสภา <span class="nw">กทม.</span></p>
+            <p><span class="dl"><span class="nw">กรุงเทพฯ</span> —</span> ที่ประชุมสภากรุงเทพมหานครมีมติเป็นเอกฉันท์ 12 ต่อ 0 เสียง ให้ทุกสิ่งใน<span class="nw">กรุงเทพฯ</span> ทั้ง 50 เขตต้องเป็นญี่ปุ่น ครอบคลุมตั้งแต่ป้ายรถเมล์ ตู้ไปรษณีย์ <span class="nw">รถตุ๊กตุ๊ก</span> ไปจนถึงทรงพุ่มของต้นไม้ริมถนน</p>
             <p>ญัตติขอยกเว้นอาคารที่ทำการสภาเองตกไปด้วยคะแนน 0 ต่อ 12 เสียง โดยผู้เสนอญัตติลงมติไม่เห็นด้วยกับญัตติของตัวเอง</p>
-            <p>ทั้งนี้ เทศบาลยืนยันว่ามติดังกล่าวไม่มีผลย้อนหลัง เว้นแต่ย้อนหลังแล้วดูเป็นญี่ปุ่นมากกว่าเดิม</p>
+            <p>ทั้งนี้ <span class="nw">กทม.</span> ยืนยันว่ามติดังกล่าวไม่มีผลย้อนหลัง เว้นแต่ย้อนหลังแล้วดูเป็นญี่ปุ่นมากกว่าเดิม</p>
             <!-- ✎ EDIT pen-2: โน้ตปากกาแดงใต้ข่าวนำ -->
-            <p class="pen"><svg aria-hidden="true"><use href="#pen-arrow"/></svg>[โน้ต #2 — เขียนตรงนี้]</p>
+            <p class="pen"><svg aria-hidden="true"><use href="#pen-arrow"/></svg><span>เปลี่ยนทั้ง<span class="nw">กรุงเทพฯ</span> แล้ว ยกเว้นท่าน<span class="nw">ผู้ว่าฯ</span> — ดีอยู่แล้ว</span></p>
           </div>
         </div>
       </article>
@@ -540,16 +540,16 @@
       <div class="cols">
         <div class="col">
           <article class="story s-cats">
-            <p class="kicker">ประกาศเทศบาล</p>
-            <h3>เทศบาลประกาศ <span class="nw">แมวทุกตัว</span>ในเขตเมืองมีสิทธิ์นั่ง<span class="nw">ตรงไหนก็ได้</span> รวมถึงบนแป้นพิมพ์</h3>
-            <p class="byline">โดย ผู้สื่อข่าวสายเทศบาล</p>
+            <p class="kicker">ประกาศ <span class="nw">กทม.</span></p>
+            <h3><span class="nw">กทม.</span> ประกาศ <span class="nw">แมวทุกตัว</span>ใน<span class="nw">กรุงเทพฯ</span> มีสิทธิ์นั่ง<span class="nw">ตรงไหนก็ได้</span> รวมถึงบนแป้นพิมพ์</h3>
+            <p class="byline">โดย ผู้สื่อข่าวสาย <span class="nw">กทม.</span></p>
             <div class="body">
-              <p>เทศบาลนคร<span class="nw">คุโระ</span>ออกประกาศรับรองสิทธิ์ของแมวทุกตัวในเขตเมือง ให้นั่ง นอน หรือยืดตัวได้ทุกพื้นที่ ทั้งเก้าอี้ว่าง เก้าอี้ที่มีคนนั่งอยู่ และกล่องกระดาษทุกขนาด มีผลตั้งแต่วันนี้เป็นต้นไป</p>
+              <p>กรุงเทพมหานครออกประกาศรับรองสิทธิ์ของแมวทุกตัวทั้ง 50 เขต ให้นั่ง นอน หรือยืดตัวได้ทุกพื้นที่ ทั้งเก้าอี้ว่าง เก้าอี้ที่มีคนนั่งอยู่ และกล่องกระดาษทุกขนาด มีผลตั้งแต่วันนี้เป็นต้นไป</p>
               <p>ข้อ 4 ของประกาศระบุว่า หากแมวนอนทับเอกสารราชการ ให้ถือว่าเอกสารนั้นได้รับการลงนามแล้ว</p>
               <p>เมื่อผู้สื่อข่าวสอบถามว่าประชาชนจะนั่งตรงไหน เจ้าหน้าที่ตอบว่าให้รอจนกว่าแมวจะลุกเอง และขอให้ผู้สื่อข่าวไม่ต้องถามต่อ</p>
             </div>
             <!-- ✎ EDIT pen-4: โน้ตปากกาแดงใต้ข่าวประกาศเรื่องแมว -->
-            <p class="pen"><svg aria-hidden="true"><use href="#pen-arrow"/></svg>[โน้ต #4 — เขียนตรงนี้]</p>
+            <p class="pen"><svg aria-hidden="true"><use href="#pen-arrow"/></svg><span>ท่าน<span class="nw">ผู้ว่าฯ</span> นั่งตรงไหนก็ได้เช่นกัน</span></p>
           </article>
 
           <article class="story s-library">
@@ -588,7 +588,7 @@
             </figure>
             <p class="byline">โดย ผู้สื่อข่าวสายการศึกษา</p>
             <div class="body">
-              <p>ห้องสมุดประชาชนเมือง<span class="nw">คุโระ</span>จัดชั้นหนังสือใหม่ทั้งอาคาร โดยให้ Berserk และ Gantz ครองชั้นแรกซึ่งอยู่ระดับสายตาพอดี</p>
+              <p>ห้องสมุดประชาชนกรุงเทพมหานครจัดชั้นหนังสือใหม่ทั้งอาคาร โดยให้ Berserk และ Gantz ครองชั้นแรกซึ่งอยู่ระดับสายตาพอดี</p>
               <p>คู่มือการยื่นภาษีถูกย้ายไปอยู่ชั้นล่างสุด ข้างเครื่องทำน้ำเย็น</p>
               <p>บรรณารักษ์ยืนยันว่าการจัดเรียงครั้งนี้เป็นไปตามหลักบรรณารักษศาสตร์ทุกประการ และชั้นแรกยาวพอรองรับเล่มที่จะออกเพิ่มในอนาคตแล้ว</p>
             </div>
@@ -639,7 +639,7 @@
             <h3><span class="nw">The Notebook</span> ขึ้นทะเบียนเป็นมรดกเมือง ฉายซ้ำได้ไม่จำกัดครั้ง</h3>
             <p class="byline">โดย ผู้สื่อข่าวสายวัฒนธรรม</p>
             <div class="body">
-              <p>คณะกรรมการมรดกเมืองมีมติขึ้นทะเบียนภาพยนตร์ <span class="nw">The Notebook</span> เป็นมรดกทางวัฒนธรรมของเมือง<span class="nw">คุโระ</span> ส่งผลให้ฉายซ้ำได้ไม่จำกัดครั้งโดยไม่ต้องยื่นขออนุญาต</p>
+              <p>คณะกรรมการมรดกเมืองมีมติขึ้นทะเบียนภาพยนตร์ <span class="nw">The Notebook</span> เป็นมรดกทางวัฒนธรรมของ<span class="nw">กรุงเทพฯ</span> ส่งผลให้ฉายซ้ำได้ไม่จำกัดครั้งโดยไม่ต้องยื่นขออนุญาต</p>
               <p>แม้ภาพยนตร์จะไม่ได้เป็นญี่ปุ่น ที่ประชุมให้เหตุผลว่ามรดกเมืองอยู่เหนือมติสภา และไม่มีกรรมการคนใดประสงค์จะอภิปรายต่อ</p>
               <p>ร้านสะดวกซื้อทุกแห่งได้รับหนังสือแจ้งให้สำรองกระดาษ<span class="nw">ทิชชู</span>เพิ่มเป็นสองเท่าในวันที่มีรอบฉาย</p>
             </div>
@@ -690,13 +690,13 @@
                 <tr><th>กลางวัน</th><td><span class="nw">ร็อก</span> — <span class="nw">Def Leppard</span> · Heart · <span class="nw">The 1975</span></td></tr>
                 <tr><th>กลางคืน</th><td><span class="nw">J-pop</span> ทั้งหมด</td></tr>
               </table>
-              <p>ผู้ฟังรายหนึ่งโทรเข้ารายการเพื่อแย้งว่า <span class="nw">The 1975</span> อาจไม่นับเป็น<span class="nw">ร็อก</span> ได้รับแจ้งว่าเทศบาลจัดประเภทไว้เรียบร้อยแล้ว และสายหลุดไปในเวลาต่อมา</p>
+              <p>ผู้ฟังรายหนึ่งโทรเข้ารายการเพื่อแย้งว่า <span class="nw">The 1975</span> อาจไม่นับเป็น<span class="nw">ร็อก</span> ได้รับแจ้งว่า <span class="nw">กทม.</span> จัดประเภทไว้เรียบร้อยแล้ว และสายหลุดไปในเวลาต่อมา</p>
             </div>
           </article>
 
           <article class="story s-mayor">
             <p class="kicker">ทำเนียบ</p>
-            <h3>นายกเทศมนตรี<span class="nw">แมวดำ</span>ปฏิเสธให้สัมภาษณ์จนกว่าจะงีบเสร็จ</h3>
+            <h3><span class="nw">ผู้ว่าฯ</span><span class="nw">แมวดำ</span>ปฏิเสธให้สัมภาษณ์จนกว่าจะงีบเสร็จ</h3>
             <figure>
               <svg class="art" viewBox="0 0 300 180" role="img" aria-label="ภาพประกอบ: แมวดำนอนขดหลับบนเบาะ มีป้ายห้ามรบกวนตั้งอยู่ข้างๆ">
   <rect width="300" height="180" fill="#F3EBDD"/>
@@ -723,12 +723,12 @@
     <text x="260" y="110.5" font-family="Kanit, sans-serif" font-weight="700" font-size="11" fill="#1A1A1A" text-anchor="middle">ห้ามรบกวน</text>
   </g>
 </svg>
-              <figcaption>ภาพ: ท่าน<span class="nw">นายกฯ</span> ระหว่างปฏิบัติภารกิจ (ภาพจากแฟ้ม)</figcaption>
+              <figcaption>ภาพ: ท่าน<span class="nw">ผู้ว่าฯ</span> ระหว่างปฏิบัติภารกิจ (ภาพจากแฟ้ม)</figcaption>
             </figure>
             <p class="byline">โดย ผู้สื่อข่าวประจำทำเนียบ</p>
             <div class="body">
-              <p>นายกเทศมนตรีนคร<span class="nw">คุโระ</span> ซึ่งเป็น<span class="nw">แมวดำ</span> ปฏิเสธคำขอสัมภาษณ์จากสื่อทุกสำนักในวันนี้ โดยทำเนียบแจ้งว่าท่านอยู่ระหว่างงีบ และจะพิจารณาคำขออีกครั้งเมื่องีบเสร็จ</p>
-              <p>ผู้สื่อข่าวรอหน้าทำเนียบตั้งแต่ 9 โมงเช้า จนถึงเวลาปิดต้นฉบับท่าน<span class="nw">นายกฯ</span> ยังไม่ตื่น</p>
+              <p>ผู้ว่าราชการกรุงเทพมหานคร ซึ่งเป็น<span class="nw">แมวดำ</span> ปฏิเสธคำขอสัมภาษณ์จากสื่อทุกสำนักในวันนี้ โดยทำเนียบแจ้งว่าท่านอยู่ระหว่างงีบ และจะพิจารณาคำขออีกครั้งเมื่องีบเสร็จ</p>
+              <p>ผู้สื่อข่าวรอหน้าทำเนียบตั้งแต่ 9 โมงเช้า จนถึงเวลาปิดต้นฉบับท่าน<span class="nw">ผู้ว่าฯ</span> ยังไม่ตื่น</p>
             </div>
             <p class="more"><a href="#gov">อ่านคำชี้แจงจากโฆษกทำเนียบ →</a></p>
           </article>
@@ -769,7 +769,7 @@
   </div>
 
   <footer class="colophon">
-    <span class="nw">The Kuro Times</span> · หนังสือพิมพ์ประจำเมือง<span class="nw">คุโระ</span> · ปีที่ 1 ฉบับที่ 1 · พิมพ์ที่โรงพิมพ์เทศบาลนคร<span class="nw">คุโระ</span><br>
+    <span class="nw">The Kuro Times</span> · หนังสือพิมพ์ประจำ<span class="nw">กรุงเทพฯ</span> · ปีที่ 1 ฉบับที่ 1 · พิมพ์ที่โรงพิมพ์กรุงเทพมหานคร<br>
     ห้ามนำไปห่อขนม เนื่องจากขนมคือค่าหนังสือพิมพ์
   </footer>
 </div>
