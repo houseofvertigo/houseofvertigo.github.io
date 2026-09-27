@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--
   The Kuro Times — ฉบับที่ 1
-  ไฟล์เดียวจบ เปิดในเบราว์เซอร์ได้เลย ไม่มีสคริปต์นอกจากตัวเขียนวันที่
+  ไฟล์เดียวจบ เปิดในเบราว์เซอร์ได้เลย สคริปต์มีแค่ตัวเขียนวันที่
+  กับลูกเล่นแตะ 4 จุด: ปลุกท่านผู้ว่าฯ · ตราอนุมัติ · ไฟถนน · ดัชนีความน่ารัก
 
   จุดที่ต้องเขียนเอง ค้นคำว่า  ✎ EDIT  ในไฟล์นี้:
     ✎ EDIT pen-1..pen-4   โน้ตปากกาแดง 4 จุด
@@ -162,6 +163,55 @@
   .sign-line{display:inline-block;min-width:11rem;border-bottom:2px solid var(--ink);text-align:center}
   .colophon{margin-top:22px;padding-top:10px;border-top:var(--rule);font:600 .76rem/1.7 var(--head);text-align:center}
 
+  /* ---------- tap-to-play bits (screen only) ---------- */
+  .tap{position:relative}
+  .art-btn,.seal-btn{display:block;width:100%;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;
+    cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
+  .seal-btn .seal{transition:transform .12s}
+  .seal-btn:active .seal{transform:rotate(-5deg) scale(.92)}
+  .lamp-btn{position:absolute;left:74%;top:31%;width:11%;height:58%;padding:0;border:0;background:none;
+    cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .art-btn:focus-visible,.seal-btn:focus-visible,.lamp-btn:focus-visible,.cute-btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+  .tap-tag{position:absolute;z-index:1;background:var(--red);color:var(--paper);font:700 .68rem/1 var(--head);
+    padding:.32em .55em .26em;pointer-events:none}
+  .tag-lamp{left:84.5%;top:27%}
+  .tag-cat{left:9px;top:9px}
+  .tag-seal{right:0;bottom:8px}
+  .lamp-off .lamp-bulb{fill:var(--ink)}
+  .lamp-off .lamp-rays{opacity:0}
+  .cat-head,.zz text{transform-box:fill-box}
+  .cat-head{transform-origin:50% 90%}
+  .waking .cat-head{animation:wiggle .6s ease-in-out}
+  .waking .zz text{animation:zfloat 1.1s ease-in-out}
+  .waking .zz text+text{animation-delay:.12s}
+  .waking .zz text+text+text{animation-delay:.24s}
+  @keyframes wiggle{30%{transform:rotate(-7deg)}65%{transform:rotate(5deg)}}
+  @keyframes zfloat{50%{transform:translateY(-10px);opacity:.25}}
+  .gov-item{position:relative}
+  .stamp{position:absolute;right:4px;top:50%;transform:translateY(-50%) rotate(-9deg);border:3px double var(--red);
+    border-radius:6px;color:var(--red);font:800 1.3rem/1 var(--head);padding:.3em .5em .22em;opacity:.9;
+    mix-blend-mode:multiply;pointer-events:none;animation:thunk .38s ease-out}
+  @keyframes thunk{from{transform:translateY(-50%) rotate(-9deg) scale(1.9);opacity:0}}
+  .cute{margin:9px 0 2px 13px}
+  .cute-btn{font:700 .78rem/1.4 var(--head);color:var(--ink);background:var(--paper);border:2px solid var(--ink);
+    padding:.32em .75em;cursor:pointer}
+  .cute-btn:hover{background:var(--ink);color:var(--paper)}
+  .cute-out{margin-top:6px;font:700 .82rem/1.55 var(--head)}
+  .cute-out .redact{background:var(--ink);color:var(--ink);padding:0 .3em;user-select:none}
+  .cute-out small{display:block;font-weight:600;font-size:.9em}
+  .cute-out em{font-style:normal;color:var(--red)}
+  .meter{position:relative;width:62%;height:10px;border:2px solid var(--ink);margin:5px 0 4px}
+  .meter i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--red);transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .meter::after{content:"";position:absolute;z-index:1;right:-2px;top:-7px;bottom:-7px;width:3px;background:var(--ink)}
+  .cute.done .meter i{width:135%}
+  .toast{position:fixed;left:50%;bottom:18px;z-index:10;width:max-content;max-width:min(92vw,440px);
+    transform:translate(-50%,170%);background:var(--paper);border:var(--rule);box-shadow:5px 5px 0 var(--ink);
+    padding:0 12px 10px;font:600 .88rem/1.55 var(--head);transition:transform .25s ease-out;pointer-events:none}
+  .toast.show{transform:translate(-50%,0)}
+  .toast b{display:block;width:max-content;background:var(--ink);color:var(--paper);font:700 .72rem/1.4 var(--head);
+    padding:.22em .6em .18em;margin:0 0 6px -12px}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
   /* ---------- phones: one column, masthead first, stories in reading order ---------- */
   .front{display:flex;flex-direction:column}
   .mainc,.side{display:contents}
@@ -236,7 +286,7 @@
     .nameplate h1{font-size:2.6rem}
     .lead{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
     .ph-lines{min-height:6rem}
-    .more{display:none}
+    .more,.tap-tag,.lamp-btn,.cute,.toast{display:none}
     .story,.gov-item,figure,.bottom>section{break-inside:avoid}
   }
 </style>
@@ -275,6 +325,7 @@
 
         <div class="civic">
           <div class="ear--seal">
+            <button type="button" class="seal-btn" id="seal-btn" aria-label="ประทับตราอนุมัติร่างงบประมาณ">
             <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="ตรากรุงเทพมหานคร รูปแมวดำใต้จันทร์เสี้ยว">
   <rect x="2" y="2" width="116" height="116" rx="8" fill="#D9381E"/>
   <rect x="9" y="9" width="102" height="102" rx="4" fill="none" stroke="#F3EBDD" stroke-width="3"/>
@@ -284,6 +335,7 @@
   <path d="M20 76 H100" stroke="#F3EBDD" stroke-width="2"/>
   <text x="60" y="100" text-anchor="middle" font-family="Kanit, sans-serif" font-weight="800" font-size="19" fill="#F3EBDD">กรุงเทพฯ</text>
 </svg>
+            <span class="tap-tag tag-seal" aria-hidden="true">แตะ</span></button>
             <p class="ear-k">ตรากรุงเทพมหานคร</p>
             <p class="ear-s">• ตราประจำเมือง •</p>
           </div>
@@ -355,7 +407,7 @@
             <h4>ท่าน<span class="nw">ผู้ว่าฯ</span> ปฏิเสธคำชมเป็นครั้งที่ 47 ของเดือน ยืนยันว่าตัวเองธรรมดา ชาวเมืองเห็นต่างทั้งเมือง</h4>
             <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบเคารพความเห็นของท่าน<span class="nw">ผู้ว่าฯ</span> ทุกประการ แต่ขอเรียนว่าความเห็นดังกล่าวยังไม่ผ่านการรับรองจากสภา และสภาไม่มีแผนจะรับรอง</p>
           </div>
-          <div class="gov-item">
+          <div class="gov-item" id="gov-budget">
             <h4>ท่าน<span class="nw">ผู้ว่าฯ</span> ตีกลับร่าง<span class="nw">งบประมาณประจำปี</span> <span class="nw">ชี้ เขียนแบบฝรั่ง</span> อธิบายเยอะเกิน ไม่ลึกซึ้ง</h4>
             <p class="spox"><b>โฆษกทำเนียบ</b>ฝ่ายงบประมาณกำลังเขียนใหม่ให้เหลือสามบรรทัด และเปิดตอนจบให้ผู้อ่านตีความเอง</p>
           </div>
@@ -366,6 +418,10 @@
           <div class="gov-item">
             <h4>ผลวิจัยล่าสุด ความน่ารักของท่าน<span class="nw">ผู้ว่าฯ</span> ไม่ขึ้นกับสภาพอากาศ</h4>
             <p class="spox"><b>โฆษกทำเนียบ</b>ทำเนียบรับทราบผลวิจัยโดยไม่มีข้อโต้แย้ง และขอสงวนสิทธิ์ไม่เปิดเผยดัชนีความน่ารักรายวันของท่าน<span class="nw">ผู้ว่าฯ</span> ด้วยเหตุผลด้านความมั่นคง</p>
+            <div class="cute" id="cute">
+              <button type="button" class="cute-btn">ขอดูดัชนีความน่ารักรายวัน</button>
+              <div class="cute-out" aria-live="polite" hidden></div>
+            </div>
           </div>
           <div class="gov-item">
             <h4>ท่าน<span class="nw">ผู้ว่าฯ</span> ยืนยัน <span class="nw">เซนส์</span><span class="nw">ผู้หญิง</span>แม่นกว่าดาวเทียม นักวิทยาศาสตร์ไม่กล้าเถียง</h4>
@@ -401,6 +457,7 @@
         <h2>สภา <span class="nw">กทม.</span> ลงมติเอกฉันท์ <span class="nw">ทุกอย่าง</span>ใน<span class="nw">กรุงเทพฯ</span> ต้องเป็นญี่ปุ่น</h2>
 
         <figure>
+          <div class="tap" id="lamp-wrap">
           <svg class="art" viewBox="0 0 720 460" role="img" aria-label="ภาพประกอบ: โทริอิสีแดงตั้งอยู่ที่ประตูเมือง ด้านหลังเป็นตึกแถวที่ติดหลังคา ผ้าม่าน และโคมแบบญี่ปุ่น มีภูเขา ดวงอาทิตย์ ตู้กดน้ำ และเสาไฟที่เปิดอยู่ แมวดำตัวหนึ่งนั่งอยู่บนคานโทริอิ">
   <rect width="720" height="460" fill="#F3EBDD"/>
   <!-- sun + clouds -->
@@ -477,8 +534,8 @@
   <rect x="596" y="170" width="8" height="236" fill="#1A1A1A"/>
   <path d="M600 176 Q600 160 580 160 H566" fill="none" stroke="#1A1A1A" stroke-width="6"/>
   <path d="M552 166 L556 156 H578 L582 166 Z" fill="#1A1A1A"/>
-  <circle cx="567" cy="172" r="7" fill="#F3EBDD" stroke="#1A1A1A" stroke-width="2.5"/>
-  <path d="M567 185 v10 M555 181 l-7 7 M579 181 l7 7 M550 172 h-9 M584 172 h9" stroke="#D9381E" stroke-width="3" stroke-linecap="round"/>
+  <circle class="lamp-bulb" cx="567" cy="172" r="7" fill="#F3EBDD" stroke="#1A1A1A" stroke-width="2.5"/>
+  <path class="lamp-rays" d="M567 185 v10 M555 181 l-7 7 M579 181 l7 7 M550 172 h-9 M584 172 h9" stroke="#D9381E" stroke-width="3" stroke-linecap="round"/>
   <rect x="590" y="398" width="20" height="8" fill="#1A1A1A"/>
 
   <!-- vending machine -->
@@ -521,6 +578,8 @@
     <rect x="248" y="424" width="12" height="28"/><rect x="272" y="424" width="12" height="28"/><rect x="296" y="424" width="12" height="28"/><rect x="320" y="424" width="12" height="28"/><rect x="344" y="424" width="12" height="28"/><rect x="368" y="424" width="12" height="28"/><rect x="392" y="424" width="12" height="28"/><rect x="416" y="424" width="12" height="28"/><rect x="440" y="424" width="12" height="28"/><rect x="464" y="424" width="12" height="28"/>
   </g>
 </svg>
+          <button type="button" class="lamp-btn" id="lamp-btn" aria-label="ลองปิดไฟถนน"></button>
+          <span class="tap-tag tag-lamp" aria-hidden="true">แตะ</span></div>
           <figcaption>ภาพ: ประตูเมืองฝั่งตะวันออก หลังกองช่างติดตั้ง<span class="nw">โทริอิ</span>ตามมติสภาเมื่อเช้ามืดวันนี้ บนคานคือผู้สังเกตการณ์ที่ไม่ประสงค์ออกนาม — ฝ่ายภาพ <span class="nw">The Kuro Times</span></figcaption>
         </figure>
 
@@ -700,6 +759,7 @@
             <p class="kicker">ทำเนียบ</p>
             <h3><span class="nw">ผู้ว่าฯ</span> <span class="nw">แมวดำ</span>ปฏิเสธให้สัมภาษณ์จนกว่าจะงีบเสร็จ</h3>
             <figure>
+              <button type="button" class="art-btn" id="wake-btn" aria-label="ลองปลุกท่านผู้ว่าฯ">
               <svg class="art" viewBox="0 0 300 180" role="img" aria-label="ภาพประกอบ: แมวดำนอนขดหลับบนเบาะ มีป้ายห้ามรบกวนตั้งอยู่ข้างๆ">
   <rect width="300" height="180" fill="#F3EBDD"/>
   <circle cx="240" cy="46" r="22" fill="#D9381E"/>
@@ -710,12 +770,14 @@
   <rect x="26" y="134" width="180" height="24" rx="8" fill="none" stroke="#F3EBDD" stroke-width="1.6" stroke-dasharray="5 4"/>
   <path d="M20 130 l-8 -6 M212 130 l8 -6" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
   <ellipse cx="130" cy="118" rx="62" ry="28" fill="#1A1A1A"/>
+  <g class="cat-head">
   <circle cx="78" cy="120" r="23" fill="#1A1A1A"/>
   <path d="M60 106 L62 84 L77 99 Z M81 98 L95 84 L96 106 Z" fill="#1A1A1A"/>
-  <path d="M186 124 Q204 150 160 152 Q112 154 74 146" fill="none" stroke="#1A1A1A" stroke-width="12" stroke-linecap="round"/>
   <path d="M66 122 q5 5 10 0 M82 122 q5 5 10 0" fill="none" stroke="#F3EBDD" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <path d="M186 124 Q204 150 160 152 Q112 154 74 146" fill="none" stroke="#1A1A1A" stroke-width="12" stroke-linecap="round"/>
   <path d="M110 98 q34 -10 64 6" fill="none" stroke="#F3EBDD" stroke-width="3" stroke-linecap="round"/>
-  <g font-family="Kanit, sans-serif" font-weight="800" fill="#1A1A1A">
+  <g class="zz" font-family="Kanit, sans-serif" font-weight="800" fill="#1A1A1A">
     <text x="94" y="74" font-size="16">z</text><text x="110" y="56" font-size="21">z</text><text x="130" y="34" font-size="27">Z</text>
   </g>
   <path d="M260 118 V160" stroke="#1A1A1A" stroke-width="3"/>
@@ -725,6 +787,7 @@
     <text x="260" y="110.5" font-family="Kanit, sans-serif" font-weight="700" font-size="11" fill="#1A1A1A" text-anchor="middle">ห้ามรบกวน</text>
   </g>
 </svg>
+              <span class="tap-tag tag-cat" aria-hidden="true">แตะ</span></button>
               <figcaption>ภาพ: ท่าน<span class="nw">ผู้ว่าฯ</span> ระหว่างปฏิบัติภารกิจ (ภาพจากแฟ้ม)</figcaption>
             </figure>
             <p class="byline">โดย ผู้สื่อข่าวประจำทำเนียบ</p>
@@ -776,6 +839,8 @@
   </footer>
 </div>
 
+<div class="toast" id="toast" role="status" aria-live="polite"><b></b><span></span></div>
+
 <script>
   // วันที่ภาษาไทย (พ.ศ.) บนแถบบนสุด ถ้าสคริปต์ไม่ทำงานจะเห็นวันที่ที่พิมพ์ไว้แทน
   (function () {
@@ -786,6 +851,99 @@
       'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'];
     el.textContent = 'วัน' + days[d.getDay()] + 'ที่ ' + d.getDate() + ' ' + months[d.getMonth()] + ' พ.ศ. ' + (d.getFullYear() + 543);
     el.setAttribute('datetime', d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2));
+  })();
+
+  // ลูกเล่นแตะ 4 จุด ทุกอย่างอยู่ในเครื่องคนอ่าน ไม่ส่งอะไรออกไปไหน
+  (function () {
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var toastEl = document.getElementById('toast');
+    var toastTimer;
+    function toast(label, text) {
+      toastEl.firstChild.textContent = label;
+      toastEl.lastChild.textContent = text;
+      toastEl.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 3800);
+    }
+    function replay(el, cls) {
+      el.classList.remove(cls);
+      void el.getBoundingClientRect();
+      el.classList.add(cls);
+    }
+
+    // 1) ปลุกท่านผู้ว่าฯ: นับจำนวนครั้งที่พยายามปลุก (จำไว้ในเครื่องนี้เท่านั้น)
+    var wakes = 0;
+    try { wakes = parseInt(localStorage.getItem('kuro-wakes'), 10) || 0; } catch (e) {}
+    var wakeLines = [[8, 'ท่านยังไม่ตื่น (เหมือนเดิม)'], [5, 'ทำเนียบขอความร่วมมืองดปลุกท่านชั่วคราว'],
+      [3, 'ท่านพลิกตัว แล้วหลับต่อ'], [1, 'ท่านยังไม่ตื่น']];
+    var wakeBtn = document.getElementById('wake-btn');
+    wakeBtn.addEventListener('click', function () {
+      wakes += 1;
+      try { localStorage.setItem('kuro-wakes', wakes); } catch (e) {}
+      replay(wakeBtn, 'waking');
+      var line = wakeLines.filter(function (l) { return wakes >= l[0]; })[0][1];
+      toast('โฆษกทำเนียบ', line + ' · มีผู้พยายามปลุกแล้ว ' + wakes + ' ครั้ง');
+    });
+
+    // 2) ตราอนุมัติ: แตะตราเมือง แล้วตราไปปั๊มบนข่าวร่างงบประมาณ
+    var budget = document.getElementById('gov-budget');
+    document.getElementById('seal-btn').addEventListener('click', function () {
+      var r = budget.getBoundingClientRect();
+      var inView = r.top >= 0 && r.bottom <= window.innerHeight;
+      if (!inView) budget.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'center' });
+      setTimeout(function () {
+        var s = budget.querySelector('.stamp');
+        if (!s) {
+          s = document.createElement('span');
+          s.className = 'stamp';
+          s.setAttribute('aria-hidden', 'true');
+          s.textContent = 'อนุมัติ';
+          budget.appendChild(s);
+        } else {
+          s.style.animation = 'none';
+          void s.offsetWidth;
+          s.style.animation = '';
+        }
+        toast('ทำเนียบ', 'ท่านผู้ว่าฯ อนุมัติร่างงบฉบับสามบรรทัดแล้ว');
+      }, inView || still ? 0 : 450);
+    });
+
+    // 3) ไฟถนน: ปิดได้แป๊บเดียว แล้วติดกลับเองตามนโยบาย
+    var lampWrap = document.getElementById('lamp-wrap');
+    var lampBusy = false;
+    document.getElementById('lamp-btn').addEventListener('click', function () {
+      if (lampBusy) return;
+      lampBusy = true;
+      lampWrap.classList.add('lamp-off');
+      var steps = still ? [[900, false]] : [[800, false], [930, true], [1010, false]];
+      steps.forEach(function (s) {
+        setTimeout(function () { lampWrap.classList.toggle('lamp-off', s[1]); }, s[0]);
+      });
+      setTimeout(function () {
+        lampBusy = false;
+        toast('โฆษกฯ', 'ไฟถนนเปิด 24 ชั่วโมงตามนโยบายท่านผู้ว่าฯ · ขอไม่ให้เหตุผล');
+      }, still ? 900 : 1050);
+    });
+
+    // 4) ดัชนีความน่ารักรายวัน: ข้อมูลลับ แต่แง้มให้ผู้อ่านฉบับนี้
+    var cute = document.getElementById('cute');
+    var cuteBtn = cute.querySelector('.cute-btn');
+    var cuteOut = cute.querySelector('.cute-out');
+    cuteBtn.addEventListener('click', function () {
+      cuteBtn.disabled = true;
+      cuteOut.hidden = false;
+      cuteOut.textContent = 'กำลังขออนุมัติจากทำเนียบ…';
+      setTimeout(function () {
+        cuteOut.innerHTML = 'ข้อมูลลับด้านความมั่นคง <span class="redact">▲▲▲▲▲▲</span>';
+      }, 800);
+      setTimeout(function () {
+        cuteBtn.hidden = true;
+        cuteOut.innerHTML = 'ดัชนีความน่ารักวันนี้ <em>▲ เกินมาตรวัด</em>' +
+          '<div class="meter"><i></i></div><small>เปิดเผยเป็นกรณีพิเศษ เฉพาะผู้อ่านฉบับนี้</small>';
+        void cuteOut.offsetWidth;
+        cute.classList.add('done');
+      }, 1900);
+    });
   })();
 </script>
 </body>
