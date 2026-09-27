@@ -61,8 +61,8 @@
   /* ---------- shared bits ---------- */
   .kicker{display:block;width:max-content;max-width:100%;background:var(--ink);color:var(--paper);
     font:600 .76rem/1.4 var(--head);padding:.26em .7em .2em;letter-spacing:.01em}
-  .byline{display:flex;align-items:center;gap:8px;font:600 .74rem/1.5 var(--head);margin:0 0 8px}
-  .byline::before{content:"";flex:none;width:16px;height:3px;background:var(--red)}
+  .byline{font:600 .74rem/1.5 var(--head);margin:0 0 8px}
+  .byline::before{content:"";display:inline-block;width:16px;height:3px;background:var(--red);margin-right:8px;vertical-align:.3em}
   .body p{margin:0 0 .6em}
   .dl{font:700 .95em var(--head)}
   figure{margin:0 0 12px}
@@ -385,7 +385,7 @@
     </div>
 
     <div class="mainc">
-      <div class="ticker" aria-label="ดัชนีวัฒนธรรมวันนี้">
+      <div class="ticker" role="group" aria-label="ดัชนีวัฒนธรรมวันนี้">
         <span class="tk-label">ดัชนีวัฒนธรรมวันนี้</span>
         <span>ญี่ปุ่น <i class="up">▲</i> 100% <small>(ตามมติสภา)</small></span>
         <span><span class="nw">มังงะ</span> <i class="up">▲</i> <small>ได้ชั้นแรก</small></span>
@@ -687,8 +687,10 @@
               <p>สถานีวิทยุประจำเมืองประกาศผังรายการใหม่ ช่วงกลางวันเปิดเพลง<span class="nw">ร็อก</span> โดยมี <span class="nw">Def Leppard</span>, Heart และ <span class="nw">The 1975</span> อยู่ในรายชื่อเปิดประจำ ส่วนช่วงกลางคืนเป็น <span class="nw">J-pop</span> ทั้งหมดตามมติสภา</p>
               <table class="sched">
                 <caption>ผังรายการใหม่</caption>
-                <tr><th>กลางวัน</th><td><span class="nw">ร็อก</span> — <span class="nw">Def Leppard</span> · Heart · <span class="nw">The 1975</span></td></tr>
-                <tr><th>กลางคืน</th><td><span class="nw">J-pop</span> ทั้งหมด</td></tr>
+                <tbody>
+                <tr><th scope="row">กลางวัน</th><td><span class="nw">ร็อก</span> — <span class="nw">Def Leppard</span> · Heart · <span class="nw">The 1975</span></td></tr>
+                <tr><th scope="row">กลางคืน</th><td><span class="nw">J-pop</span> ทั้งหมด</td></tr>
+                </tbody>
               </table>
               <p>ผู้ฟังรายหนึ่งโทรเข้ารายการเพื่อแย้งว่า <span class="nw">The 1975</span> อาจไม่นับเป็น<span class="nw">ร็อก</span> ได้รับแจ้งว่า <span class="nw">กทม.</span> จัดประเภทไว้เรียบร้อยแล้ว และสายหลุดไปในเวลาต่อมา</p>
             </div>
@@ -696,7 +698,7 @@
 
           <article class="story s-mayor">
             <p class="kicker">ทำเนียบ</p>
-            <h3><span class="nw">ผู้ว่าฯ</span><span class="nw">แมวดำ</span>ปฏิเสธให้สัมภาษณ์จนกว่าจะงีบเสร็จ</h3>
+            <h3><span class="nw">ผู้ว่าฯ</span> <span class="nw">แมวดำ</span>ปฏิเสธให้สัมภาษณ์จนกว่าจะงีบเสร็จ</h3>
             <figure>
               <svg class="art" viewBox="0 0 300 180" role="img" aria-label="ภาพประกอบ: แมวดำนอนขดหลับบนเบาะ มีป้ายห้ามรบกวนตั้งอยู่ข้างๆ">
   <rect width="300" height="180" fill="#F3EBDD"/>
